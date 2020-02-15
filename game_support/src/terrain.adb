@@ -3,14 +3,15 @@ with Ada.Text_IO; use Ada.Text_IO;
 
 with Perlin; use Perlin;
 with Display; use Display;
+
 package body Terrain is
    
    Is_Generated : Boolean := False; -- barrier
-   surface_index : Natural; -- index for which the surface begins
    
    protected body Terrain_Object is
       
-      procedure Generate(window_width: Natural) is
+      procedure Generate 
+        (window_width: Natural; Game_Window_Width: out Natural ; Surface_Index: out Natural) is
          subtype my_index is Natural range 1 .. Size - Surface_width;
          package Random_value is new Ada.Numerics.Discrete_Random (my_index);
          use Random_value;
@@ -20,6 +21,7 @@ package body Terrain is
          r_value : Natural;
          
       begin
+         Game_Window_Width := window_width;
          for I in 1 .. Size loop
             My_Terrain(I) := 
               (x_value, (Noise(X => inc / 1500.0) * 10.0 - 5.0) * 50.0, 1.0);
@@ -31,7 +33,7 @@ package body Terrain is
          -- generate a surface to land
          Random_value.Reset(G);
          r_value := Random_value.Random(G);
-         surface_index := r_value;
+         Surface_Index := r_value;
          
          My_Terrain(r_value).Z := 2.0;
          for I in 1 .. Surface_width loop
@@ -44,10 +46,15 @@ package body Terrain is
          
       end Generate;
       
-      entry Get_Terrain (canvas: Canvas_ID) when Is_Generated is
+      entry Get_Terrain (Mars_Terrain: out Terrain_Type) when Is_Generated is
+      begin
+         Mars_Terrain := My_Terrain;
+      end Get_Terrain;
+      
+      procedure Draw_Terrain (canvas: Canvas_ID) is
       begin
          -- color the landing surface in green
-         for J in surface_index .. surface_index + Surface_width - 1 loop
+         for J in Surface_Index .. Surface_Index + Surface_Width - 1 loop
             Draw_Line(Canvas => canvas,
                    P1     => My_Terrain(J),
                    P2     => My_Terrain(J + 1),
@@ -62,7 +69,12 @@ package body Terrain is
                    Color  => Red);
          end loop;
          
-      end Get_Terrain;
+      end Draw_Terrain;
+      
+      procedure Get_Surface (Surface_Begin_Point: out Point_3d) is
+      begin
+         Surface_Begin_Point := My_Terrain(Surface_Index);
+      end Get_Surface;
       
    end Terrain_Object;
 

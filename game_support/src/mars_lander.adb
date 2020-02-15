@@ -2,6 +2,8 @@ with Ada.Text_IO; use Ada.Text_IO;
 
 with Vector; use Vector;
 with Display.Image; use Display.Image;
+with Terrain; use Terrain;
+with Collision; use Collision;
   
 package body Mars_Lander is
    
@@ -20,20 +22,72 @@ package body Mars_Lander is
       -- pressed key
       entry Step (lander: in out Lander_Type; key: Key_T) when Is_Put is
          -- time interval
-         delta_t: constant Point_3d := (40.0 / 1000.0, 40.0 / 1000.0, 0.0);
+         delta_t : constant Point_3d := (40.0 / 1000.0, 40.0 / 1000.0, 0.0);
+         tmp_pos_1 : constant Point_3d := ((-20.0), (-22.0), 0.0);
+         tmp_pos_2 : constant Point_3d := ((20.0), (-22.0), 0.0);
+         tmp_pos_3 : constant Point_3d := ((-20.0), (22.0), 0.0);
+         tmp_pos_4 : constant Point_3d := ((20.0), (22.0), 0.0);
+         
+         surface_start : Point_3d;
+         surface_offset : constant Point_3d := 
+           (Float(Surface_Width) * Float(Game_Window_Width) / Float(Size), 0.0, 0.0);
+         surface_end : Point_3d;
+         Mars_Terrain : Terrain_Type;
+         terrain_index : Natural;
+         
+         surface_collision_test : Boolean := False;
+         terrain_crush_test : Boolean := False;
          
       begin
-         if lander.Position.Y <= 22.0 then
+         -- get the starting and ending points of surface, and the terrain array
+         Terrain_Object.Get_Surface(Surface_Begin_Point => surface_start);
+         surface_end := surface_start + surface_offset;
+         Terrain_Object.Get_Terrain(Mars_Terrain => Mars_Terrain);
+         
+         -- collision test
+         surface_collision_test := 
+           Line_Rectangle(A  => lander.Position + tmp_pos_1,
+                          B  => lander.Position + tmp_pos_2,
+                          C  => lander.Position + tmp_pos_3,
+                          D  => lander.Position + tmp_pos_4,
+                          E1 => surface_start,
+                          E2 => surface_end);
+         -- crush test
+         terrain_index := 
+              50 + Integer(lander.Position.X / ((Float(Game_Window_Width) / Float(Size))));
+         
+         if terrain_index >= Size then
+            lander.crushed := True;
+         else 
+            terrain_crush_test := 
+              Line_Rectangle(A  => lander.Position + tmp_pos_1,
+                             B  => lander.Position + tmp_pos_2,
+                             C  => lander.Position + tmp_pos_3,
+                             D  => lander.Position + tmp_pos_4,
+                             E1 => Mars_Terrain(terrain_index),
+                             E2 => Mars_Terrain(terrain_index + 1));
+         end if;
+         
+         -- case if the lander is trying to land on the surface               
+         if surface_collision_test then
             lander.stopped := True;
             lander.Speed := (0.0, 0.0, 0.0);
             lander.Acceleration := (0.0, 0.0, 0.0);
             lander.Gravity := (0.0, 0.0, 0.0);
-            if lander.Speed.Y > 20.0 and then lander.Speed.X > 20.0 then
+            
+            -- crush test
+            if (lander.Speed.Y > 20.0 and then lander.Speed.X > 20.0) 
+              or else (lander.Direction > 10.0 or else lander.Direction < -10.0) then
                lander.crushed := True;
             end if;
-            if lander.Direction > 15.0 or else lander.Direction < -15.0 then
-               lander.crushed := True;
-            end if;
+         end if;
+         
+         if terrain_crush_test then
+            lander.stopped := True;
+            lander.crushed := True;
+            lander.Speed := (0.0, 0.0, 0.0);
+            lander.Acceleration := (0.0, 0.0, 0.0);
+            lander.Gravity := (0.0, 0.0, 0.0);
          end if;
          
          case key is
@@ -143,8 +197,6 @@ package body Mars_Lander is
             lander_image := Manual_Sprite_Copy(lander_spritemap, 3);
          end if;
          
-         
-         
          Draw_Image(Canvas   => canvas,
                     Position => lander.Position,
                     Width    => 40.0,
@@ -158,6 +210,7 @@ package body Mars_Lander is
                     Height   => 1024.0,
                     Rotation => 0.0,
                     Image    => Load_BMP("sky.bmp"));
+         
          if lander.stopped and then lander.crushed = False then
             txt_pos.X := 400 - Get_Text_Size(Text => "Successfully landed!").X / 2;
             txt_pos.Y := 400;

@@ -47,8 +47,9 @@ begin
         speed_y => 6.0);
 
    -- generate and draw terrain
-   Terrain_Object.Generate(window_width => Width);
-
+   Terrain_Object.Generate(window_width      => Width,
+                           Game_Window_Width => Game_Window_Width,
+                           Surface_Index     => Surface_Index);
    -- game loop
    while not Is_Killed loop
 
@@ -59,7 +60,7 @@ begin
       protected_lander.Draw(lander => Mars_Lander,
                             canvas => Canvas);
 
-      Terrain_Object.Get_Terrain(canvas => Canvas);
+      Terrain_Object.Draw_Terrain(canvas => Canvas);
 
       -- define the pressed key
       protected_lander.User_Input(pressed_key => Key);
