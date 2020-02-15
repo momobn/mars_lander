@@ -16,7 +16,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 RV MAX_ENTRY_QUEUE_LENGTH=1+
 
-U main%b		main.adb		a0e4483b NE OO SU
+U main%b		main.adb		96b8e33a NE OO SU
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 Z ada.real_time.delays%s  a-retide.adb		a-retide.ali
@@ -48,7 +48,7 @@ D i-c.ads		20190518041256 5421119b interfaces.c%s
 D i-cexten.ads		20190518041256 38d7e116 interfaces.c.extensions%s
 D i-cstrin.ads		20190518041256 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
-D main.adb		20200215160808 4d0947a1 main%b
+D main.adb		20200215201536 7fee81ab main%b
 D mars_lander.ads	20200130184840 e6c0d7f0 mars_lander%s
 D sdl_blendmode_h.ads	20200121120806 e308a3b6 sdl_blendmode_h%s
 D sdl_pixels_h.ads	20200121120806 89492fa8 sdl_pixels_h%s
@@ -85,17 +85,17 @@ D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
 D s-win32.ads		20190518041256 90ecf4e6 system.win32%s
-D terrain.ads		20200215164524 fbc5d42b terrain%s
+D terrain.ads		20200215201508 ff7eb920 terrain%s
 G a e
 G c Z b b [main standard 10 11 none]
 G r s lander_type [main standard 10 11 none] [lander_typeIP mars_lander 16 9 none]
 G r c none [main standard 10 11 none] [create_window display__basic 25 13 none]
 G r c none [main standard 10 11 none] [get_canvas display__basic 33 13 none]
 G r c none [main standard 10 11 none] [init mars_lander 12 14 none]
-G r p none [main standard 10 11 none] [generate terrain__terrain_object 10 17 none]
+G r p none [main standard 10 11 none] [generate terrain__terrain_object 12 17 none]
 G r c none [main standard 10 11 none] [is_killed display__basic 350 12 none]
 G r p none [main standard 10 11 none] [draw mars_lander__protected_lander 9 17 none]
-G r o none [main standard 10 11 none] [get_terrain terrain__terrain_object 11 13 none]
+G r p none [main standard 10 11 none] [draw_terrain terrain__terrain_object 16 17 none]
 G r o none [main standard 10 11 none] [user_input mars_lander__protected_lander 10 13 none]
 G r o none [main standard 10 11 none] [step mars_lander__protected_lander 8 13 none]
 G r c none [main standard 10 11 none] [swap_buffers display__basic 337 14 none]
@@ -106,7 +106,7 @@ X 5 a-reatim.ads
 49O9*Time<duration> 18|12r11
 54O9*Time_Span<duration> 18|16r22
 61V13*Clock{49O9} 18|42s12
-65V14*"+"{49O9} 18|42s18 80s20
+65V14*"+"{49O9} 18|42s18 81s20
 119V13*Milliseconds{54O9} 18|16s35
 X 9 a-textio.ads
 57K13*Text_IO 727e16 18|2w10 2r27
@@ -119,33 +119,33 @@ X 12 display-basic.ads
 31I9*Canvas_ID<359I9> 18|22r13
 33V13*Get_Canvas{31I9} 18|39s14
 55E9*Key_T 299e26 18|31r9
-56n7*SDLK_UNKNOWN{55E9} 18|56r14
-337U14*Swap_Buffers 18|74s7
-350V12*Is_Killed{boolean} 18|53s14
+56n7*SDLK_UNKNOWN{55E9} 18|57r14
+337U14*Swap_Buffers 18|75s7
+350V12*Is_Killed{boolean} 18|54s14
 356I9 Window_ID_Range<short_short_integer>
 359I9 Canvas_ID_Range<short_integer>
 X 18 main.adb
-10U11*Main 10b11 83l5 83t9
-12o4 Next{5|49O9} 42m4 77r19 80m7 80r15
-16o4 Period{5|54O9} 42r20 80r22
-19i4 Window{12|23I9} 35m4 39r26 74r21
-22i4 Canvas{12|31I9} 39m4 60r39 62r44
-24N4 Width 36r21 50r44
+10U11*Main 10b11 84l5 84t9
+12o4 Next{5|49O9} 42m4 78r19 81m7 81r15
+16o4 Period{5|54O9} 42r20 81r22
+19i4 Window{12|23I9} 35m4 39r26 75r21
+22i4 Canvas{12|31I9} 39m4 61r39 63r45
+24N4 Width 36r21 50r49
 25N4 Height 36r28
-28r4 Mars_Lander{19|6R9} 45m20 45r20 59m39 59r39 70m39 70r39
-31e4 Key{12|55E9} 56m7 65m50 65r50 71r38
+28r4 Mars_Lander{19|6R9} 45m20 45r20 60m39 60r39 71m39 71r39
+31e4 Key{12|55E9} 57m7 66m50 66r50 72r38
 X 19 mars_lander.ads
 4K9*Mars_Lander 18|6w6 6r25 19|26e16
 6R9*Lander_Type 18|28r18 19|24e14
-7w14*protected_lander 18|59r7 65r7 70r7
-8Y13 Step 18|70s24
-8r19 lander{6R9} 18|70r29
-8e47 key{12|55E9} 18|71r29
-9U17 Draw 18|59s24
-9r23 lander{6R9} 18|59r29
-9i51 canvas{12|31I9} 18|60r29
-10Y13 User_Input 18|65s24
-10e25 pressed_key{12|55E9} 18|65r35
+7w14*protected_lander 18|60r7 66r7 71r7
+8Y13 Step 18|71s24
+8r19 lander{6R9} 18|71r29
+8e47 key{12|55E9} 18|72r29
+9U17 Draw 18|60s24
+9r23 lander{6R9} 18|60r29
+9i51 canvas{12|31I9} 18|61r29
+10Y13 User_Input 18|66s24
+10e25 pressed_key{12|55E9} 18|66r35
 12U14*Init 18|45s4
 12r20 lander{6R9} 18|45r9
 12f48 speed_x{float} 18|46r9
@@ -154,10 +154,14 @@ X 41 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
 X 55 terrain.ads
-3K9*Terrain 18|7w6 7r25 55|16e12
-9w14*Terrain_Object 18|50r4 62r7
-10U17 Generate 18|50s19
-10i26 window_width{natural} 18|50r28
-11Y13 Get_Terrain 18|62s22
-11i26 canvas{12|31I9} 18|62r34
+3K9*Terrain 18|7w6 7r25 55|21e12
+7i4*Surface_Index{natural} 18|52m49
+8i4*Game_Window_Width{natural} 18|51m49
+11w14*Terrain_Object 18|50r4 63r7
+12U17 Generate 18|50s19
+13i10 window_width{natural} 18|50r28
+13i33 Game_Window_Width{natural} 18|51r28
+13i66 Surface_Index{natural} 18|52r28
+16U17 Draw_Terrain 18|63s22
+16i31 canvas{12|31I9} 18|63r35
 
