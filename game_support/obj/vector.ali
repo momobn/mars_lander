@@ -1,0 +1,89 @@
+V "GNAT Lib v2019"
+A -O0
+A -gnatA
+A -gnat12
+A -g
+A -gnatQ
+A -gnatwa
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U vector%b		vector.adb		26cbc451 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+
+U vector%s		vector.ads		ba7f46fe EE NE OO PK
+W display%s		display.ads		display.ali
+W display.basic%s	display-basic.adb	display-basic.ali
+
+D ada.ads		20190518041256 76789da1 ada%s
+D a-numeri.ads		20190518041256 bb51c45a ada.numerics%s
+D a-nuelfu.ads		20190518041256 03e83d1c ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20190518041258 55716239 ada.numerics.generic_elementary_functions%s
+D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
+D display.ads		20200128155808 3a88167c display%s
+D display-basic.ads	20200121120804 66d43323 display.basic%s
+D interfac.ads		20190518041256 5ab55268 interfaces%s
+D i-c.ads		20190518041256 5421119b interfaces.c%s
+D i-cexten.ads		20190518041256 38d7e116 interfaces.c.extensions%s
+D i-cstrin.ads		20190518041256 341d0ddf interfaces.c.strings%s
+D sdl_blendmode_h.ads	20200121120806 e308a3b6 sdl_blendmode_h%s
+D sdl_pixels_h.ads	20200121120806 89492fa8 sdl_pixels_h%s
+D sdl_rect_h.ads	20200121120806 5db03fa9 sdl_rect_h%s
+D sdl_rwops_h.ads	20200121120806 d60b2061 sdl_rwops_h%s
+D sdl_stdinc_h.ads	20200121120806 76b5d89f sdl_stdinc_h%s
+D sdl_surface_h.ads	20200121120806 da149c96 sdl_surface_h%s
+D stdarg_h.ads		20200121120806 db698406 stdarg_h%s
+D stddef_h.ads		20200121120806 f49cc756 stddef_h%s
+D stdint_h.ads		20200121120806 376ae00b stdint_h%s
+D system.ads		20190518041258 32a08138 system%s
+D s-exctab.ads		20190518041256 54135002 system.exception_table%s
+D s-parame.ads		20190518041258 48ec542b system.parameters%s
+D s-stalib.ads		20190518041258 09bd3940 system.standard_library%s
+D vector.ads		20200125102538 dcab75dd vector%s
+D vector.adb		20200130181526 42d948ca vector%b
+G a e
+G c Z s b [Oadd vector 5 13 none]
+G c Z s b [Omultiply vector 7 13 none]
+G c Z s b [from_angle vector 9 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 26|1r6 1r24 3r6 4r6
+X 2 a-numeri.ads
+16K13*Numerics 32e17 26|1w10 1r28 3r10 4r10
+21N4*Pi 26|29r31 30r29
+X 3 a-nuelfu.ads
+18K22*Elementary_Functions[4|39] 26|3w19 4r19
+X 4 a-ngelfu.ads
+94V13*Sin{float} 26|29s18[3|18]
+103V13*Cos{float} 26|30s16[3|18]
+X 6 display.ads
+23K9*Display 59e12 25|1r6 1r25
+X 7 display-basic.ads
+20K17*Basic 363e18 25|1w14 1r33
+40R9*Point_3d 44e14 25|5r32 5r49 7r31 7r48 9r47 26|8r32 8r49 9r12 17r32 17r49
+. 18r12 26r47 27r12
+41f7*X{float} 26|11m11 11r21 11r31 20m11 20r21 20r31 29m11
+42f7*Y{float} 26|12m11 12r21 12r31 21m11 21r21 21r31 30m11
+43f7*Z{float} 26|13m11 13r21 13r31 22m11 22r21 22r31 31m11
+X 25 vector.ads
+3K9*Vector 11l5 11e11 26|6b14 35l5 35t11
+5V14*"+"{7|40R9} 5>18 5>24 26|8b14 15l9 15t11
+5r18 Left{7|40R9} 26|8b18 11r16 12r16 13r16
+5r24 Right{7|40R9} 26|8b24 11r25 12r25 13r25
+7V14*"*"{7|40R9} 7>18 7>24 26|17b14 24l9 24t11
+7r18 Left{7|40R9} 26|17b18 20r16 21r16 22r16
+7r24 Right{7|40R9} 26|17b24 20r25 21r25 22r25
+9V13*From_Angle{7|40R9} 9>25 26|26b13 33l8 33t18
+9f25 Angle{float} 26|26b25 29r23 30r21
+X 26 vector.adb
+9r7 vec{7|40R9} 11m7 12m7 13m7 14r14
+18r7 vec{7|40R9} 20m7 21m7 22m7 23r14
+27r7 vec{7|40R9} 29m7 30m7 31m7 32r14
+

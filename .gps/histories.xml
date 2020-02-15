@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<History>
+  <key type="booleans" name="omni-search-include-all-from-source-dirs" >
+    <value>TRUE</value>
+  </key>
+  <key type="booleans" name="-filter-is-regexp" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="preferences_editor_searchpreferences_editor_search-case_sensitive" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="preferences_editor_searchpreferences_editor_search-whole_word" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="window_x_Search" >
+    <value> 622</value>
+    <value> 590</value>
+  </key>
+  <key type="booleans" name="project_view-filter-whole-word" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="preferences_editor_search-width" >
+    <value> 25</value>
+  </key>
+  <key type="strings" name="locations-filter-recent" >
+    <Length> 5</Length>
+  </key>
+  <key type="booleans" name="-filter-whole-word" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="window_x_Preferences" >
+    <value> 215</value>
+  </key>
+  <key type="strings" name="debugger-variables-filter-recent" >
+    <Length> 5</Length>
+  </key>
+  <key type="booleans" name="Call_Graph_Show_Locations" >
+    <value>TRUE</value>
+  </key>
+  <key type="strings" name="search-recent-Current file"  />
+  <key type="booleans" name="case_sensitive_search" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="outline-filter-recent" >
+    <Length> 5</Length>
+  </key>
+  <key type="strings" name="project_view-filter-recent" >
+    <Length> 5</Length>
+  </key>
+  <key type="strings" name="search-recent-Actions"  />
+  <key type="strings" name="Custom..." >
+    <value>%external</value>
+    <value />
+  </key>
+  <key type="strings" name="search_mode" >
+    <value>FIND_ONLY</value>
+    <Length> 1</Length>
+  </key>
+  <key type="booleans" name="whole_word_search" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="global_searchglobal_search-case_sensitive" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="search-recent-Opened"  />
+  <key type="booleans" name="debugger-variables-filter-is-regexp" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="outline-filter-whole-word" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="gvd_console" >
+    <value>q</value>
+    <value>exit</value>
+    <value>d</value>
+    <Length> 100</Length>
+  </key>
+  <key type="booleans" name="locations-filter-whole-word" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="console_C:\WINDOWS\system32\cmd.exe" >
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>cd obj</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>cd ../..</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>cd obj</value>
+    <value>cd ../..</value>
+    <value>dir</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>cd obj</value>
+    <value>cd ..</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>cd obj</value>
+    <value>cd ..</value>
+    <value>dir</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>cd ..</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>cd obj</value>
+    <Length> 100</Length>
+  </key>
+  <key type="strings" name="search-recent-Entities" >
+    <value>Draw_Rect:display-basic.ads:310:14</value>
+    <Length> 5</Length>
+  </key>
+  <key type="strings" name="search-recent-File names"  />
+  <key type="booleans" name="commits-filter-negate" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="debugger-variables-filter-fuzzy" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="commits-filter-is-regexp" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="-filter-negate" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="commits-filter-whole-word" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="interactive" >
+    <Length> 100</Length>
+  </key>
+  <key type="booleans" name="project_view-filter-fuzzy" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="global_searchglobal_search-whole_word" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="global_search-preview" >
+    <value>TRUE</value>
+  </key>
+  <key type="strings" name="window_y_Search" >
+    <value> 152</value>
+    <value> 265</value>
+  </key>
+  <key type="strings" name="search-recent-Preferences" >
+    <value>Prj-Editor-Generate-Relative-Paths</value>
+    <Length> 5</Length>
+  </key>
+  <key type="booleans" name="locations-filter-is-regexp" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="debugger-variables-filter-whole-word" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="search_replace" >
+    <value />
+    <Length> 5</Length>
+  </key>
+  <key type="booleans" name="-filter-fuzzy" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="search_patterns" >
+    <value>Acceleration.X   </value>
+    <value>point_2d   </value>
+    <value>draw   </value>
+    <value>direction   </value>
+    <Length> 5</Length>
+  </key>
+  <key type="strings" name="global_search-kind" >
+    <value>FUZZY</value>
+    <value>FULL_TEXT</value>
+    <Length> 1</Length>
+  </key>
+  <key type="strings" name="reopen_files" >
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\mars_lander.adb</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\mars_lander.ads</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\vector.adb</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\vector.ads</value>
+    <value>C:\GNAT\2019\lib\gcc\x86_64-pc-mingw32\8.3.1\adainclude\i-cstrin.adb</value>
+    <value>C:\GNAT\2019\lib\gcc\x86_64-pc-mingw32\8.3.1\adainclude\i-cstrin.ads</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\display-basic.ads</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\backends\opengl_sdl_gnat_sdl2\display-basic.adb</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\src\main.adb</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\display-image.adb</value>
+  </key>
+  <key type="strings" name="GNAT Metrics for file" >
+    <value>%gnat metric -dd -ox %O/metrix.xml -x -P%pp %X %F</value>
+  </key>
+  <key type="booleans" name="search-displays-relative-paths" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="search-recent-Plugins"  />
+  <key type="booleans" name="outline-filter-fuzzy" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="commits-filter-fuzzy" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="commits-filter-recent" >
+    <Length> 5</Length>
+  </key>
+  <key type="booleans" name="outline-filter-negate" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="locations-filter-negate" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="window_y_Preferences" >
+    <value> 0</value>
+  </key>
+  <key type="strings" name="history-filter-recent" >
+    <Length> 5</Length>
+  </key>
+  <key type="booleans" name="debugger-variables-filter-negate" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="preferences_editor_search-kind" >
+    <value>FUZZY</value>
+    <value>FULL_TEXT</value>
+    <Length> 1</Length>
+  </key>
+  <key type="strings" name="-filter-recent" >
+    <Length> 5</Length>
+  </key>
+  <key type="strings" name="search_module" >
+    <Length> 1</Length>
+  </key>
+  <key type="booleans" name="project_view-filter-is-regexp" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="history-filter-is-regexp" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="global_search-width" >
+    <value> 25</value>
+  </key>
+  <key type="strings" name="key-theme" >
+    <Length> 1</Length>
+  </key>
+  <key type="booleans" name="regexp_search" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="preferences_editor_search-preview" >
+    <value>TRUE</value>
+  </key>
+  <key type="strings" name="project_files" >
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\mars_lander.gpr</value>
+  </key>
+  <key type="booleans" name="project_view-filter-negate" >
+    <value>FALSE</value>
+  </key>
+  <key type="booleans" name="locations-filter-fuzzy" >
+    <value>FALSE</value>
+  </key>
+  <key type="strings" name="search-recent-Specific file"  />
+  <key type="booleans" name="outline-filter-is-regexp" >
+    <value>FALSE</value>
+  </key>
+</History>

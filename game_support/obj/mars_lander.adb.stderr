@@ -1,0 +1,4 @@
+mars_lander.adb:107:10: warning: "lower_bound" is not modified, could be declared constant
+mars_lander.adb:108:10: warning: "upper_bound" is not modified, could be declared constant
+mars_lander.adb:109:10: warning: "lander_img" is not modified, could be declared constant
+mars_lander.adb:134:10: warning: "lander_spritemap" is not modified, could be declared constant

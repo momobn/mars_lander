@@ -1,0 +1,162 @@
+configuration project Default is
+
+   for Target use "x86_64-windows";
+   for Canonical_Target use "x86_64-windows";
+   for Inherit_Source_Path ("c++") use ("C");
+   for Inherit_Source_Path ("asm_cpp") use ("Asm");
+   for Default_Language use "Ada";
+   for Toolchain_Version ("ada") use "GNAT 2019";
+   for Runtime_Dir ("ada") use "C:\gnat\2019\lib\gcc\x86_64-pc-mingw32\8.3.1\";
+   for Library_Encapsulated_Supported use "true";
+   for Object_Lister use ("nm", "-g", "--no-demangle");
+   for Object_Lister_Matcher use " [TDRB] (.*)";
+   for Archive_Builder use ("ar", "cr");
+   for Archive_Builder_Append_Option use ("q");
+   for Archive_Indexer use ("ranlib");
+   for Archive_Suffix use ".a";
+   for Symbolic_Link_Supported use "false";
+   for Library_Major_Minor_Id_Supported use "false";
+   for Library_Partial_Linker use ("c:\gnat\2019\bin\gcc", "-nostdlib", "-Wl,-r", "-o");
+   for Library_Builder use "C:\GNAT\2019\libexec/gprbuild/gprlib";
+   for Library_Support use "full";
+   for Shared_Library_Prefix use "lib";
+   for Shared_Library_Minimum_Switches use ("-shared", "-shared-libgcc");
+   for Library_Version_Switches use ("-Wl,-soname,");
+   for Shared_Library_Suffix use ".dll";
+   for Library_Encapsulated_Options use ("-shared", "-static-libgcc");
+   for Library_Auto_Init_Supported use "true";
+   for Default_Language use "Ada";
+
+   package Builder is
+      for Executable_Suffix use ".exe";
+   end Builder;
+
+   package Compiler is
+      for Language_Kind ("ada") use "unit_based";
+      for Driver ("ada") use "c:\gnat\2019\bin\gcc";
+      for Language_Kind ("ada") use "unit_based";
+      for Dependency_Kind ("ada") use "ALI_File";
+      for Leading_Required_Switches ("ada") use ("-c", "-x", "ada", "-gnatA") & Compiler'Leading_Required_Switches ("Ada");
+      for Mapping_File_Switches ("ada") use ("-gnatem=");
+      for Mapping_Spec_Suffix ("ada") use "%s";
+      for Mapping_Body_Suffix ("ada") use "%b";
+      for Config_File_Switches ("ada") use ("-gnatec=");
+      for Include_Path_File ("ada") use "ADA_PRJ_INCLUDE_FILE";
+      for Multi_Unit_Switches ("ada") use ("-gnateI");
+      for Multi_Unit_Object_Separator ("ada") use "~";
+      for Config_Body_File_Name ("ada") use "pragma Source_File_Name_Project (%u, Body_File_Name => ""%f"");";
+      for Config_Spec_File_Name ("ada") use "pragma Source_File_Name_Project (%u, Spec_File_Name => ""%f"");";
+      for Config_Body_File_Name_Index ("ada") use "pragma Source_File_Name_Project (%u, Body_File_Name => ""%f"", Index => %i);";
+      for Config_Spec_File_Name_Index ("ada") use "pragma Source_File_Name_Project (%u, Spec_File_Name => ""%f"", Index => %i);";
+      for Config_Body_File_Name_Pattern ("ada") use "pragma Source_File_Name_Project " & "  (Body_File_Name  => ""*%b""," & "   Casing          => %c," & "   Dot_Replacement => ""%d"");";
+      for Config_Spec_File_Name_Pattern ("ada") use "pragma Source_File_Name_Project " & "  (Spec_File_Name  => ""*%s""," & "   Casing          => %c," & "   Dot_Replacement => ""%d"");";
+      for Config_File_Unique ("ada") use "False";
+      for Object_File_Suffix ("html") use "-";
+      for Object_File_Suffix ("xml") use "-";
+      for Object_File_Suffix ("matlab") use "-";
+      for Object_File_Suffix ("c#") use "-";
+      for Object_File_Suffix ("asm2") use "-";
+      for Object_File_Suffix ("asm_cpp") use "-";
+      for Object_File_Suffix ("asm") use "-";
+      for Object_File_Suffix ("gnat expanded code") use "-";
+      for Object_File_Suffix ("java") use "-";
+      for Object_File_Suffix ("javascript") use "-";
+      for Object_File_Suffix ("tcl") use "-";
+      for Object_File_Suffix ("shell") use "-";
+      for Object_File_Suffix ("makefile") use "-";
+      for Object_File_Suffix ("m4") use "-";
+      for Object_File_Suffix ("fortran 90") use "-";
+      for Object_File_Suffix ("pascal") use "-";
+      for Object_File_Suffix ("perl") use "-";
+      for Object_File_Suffix ("awk") use "-";
+      for Object_File_Suffix ("autoconf") use "-";
+      for Object_File_Suffix ("rest") use "-";
+      for Object_File_Suffix ("texinfo") use "-";
+      for Object_File_Suffix ("project file") use "-";
+      for Object_File_Suffix ("changelog") use "-";
+      for Object_File_Suffix ("qgen") use "-";
+      for Object_File_Suffix ("simulink") use "-";
+      for Object_File_Suffix ("python") use ".pyc";
+      for Object_File_Suffix ("css") use "-";
+      for Object_File_Suffix ("wsdl") use "-";
+      for Object_File_Suffix ("c++") use ".o";
+      for Object_File_Suffix ("c") use ".o";
+      for Object_File_Suffix ("ada") use ".o";
+   end Compiler;
+
+   package Naming is
+      for Spec_Suffix ("ada") use ".ads";
+      for Body_Suffix ("ada") use ".adb";
+      for Body_Suffix ("asm") use ".s";
+      for Body_Suffix ("asm2") use ".asm";
+      for Body_Suffix ("asm_cpp") use ".S";
+      for Body_Suffix ("c") use ".c";
+      for Spec_Suffix ("c") use ".h";
+      for Spec_Suffix ("c++") use ".hh";
+      for Body_Suffix ("c++") use ".cpp";
+      for Body_Suffix ("fortran") use ".f";
+      for Casing use "lowercase";
+      for Dot_Replacement use "-";
+      for Spec_Suffix ("html") use ".html";
+      for Body_Suffix ("xml") use ".xml";
+      for Body_Suffix ("matlab") use ".m";
+      for Spec_Suffix ("c#") use ".cs";
+      for Body_Suffix ("asm2") use ".asm";
+      for Body_Suffix ("asm_cpp") use ".s";
+      for Body_Suffix ("asm") use ".s";
+      for Body_Suffix ("gnat expanded code") use ".dg";
+      for Body_Suffix ("java") use ".java";
+      for Body_Suffix ("javascript") use ".js";
+      for Body_Suffix ("tcl") use ".tcl";
+      for Body_Suffix ("shell") use ".sh";
+      for Body_Suffix ("m4") use ".m4";
+      for Body_Suffix ("fortran 90") use ".f";
+      for Body_Suffix ("pascal") use ".pas";
+      for Body_Suffix ("perl") use ".pl";
+      for Body_Suffix ("awk") use ".awk";
+      for Body_Suffix ("autoconf") use "configure.in";
+      for Body_Suffix ("rest") use ".rst";
+      for Body_Suffix ("texinfo") use ".texi";
+      for Body_Suffix ("project file") use ".gpr";
+      for Spec_Suffix ("changelog") use ".changelog";
+      for Body_Suffix ("qgen") use ".xmi";
+      for Spec_Suffix ("simulink") use ".slx";
+      for Body_Suffix ("simulink") use ".mdl";
+      for Body_Suffix ("python") use ".py";
+      for Body_Suffix ("css") use ".css";
+      for Spec_Suffix ("wsdl") use ".wsdl";
+      for Spec_Suffix ("c++") use ".hh";
+      for Body_Suffix ("c++") use ".cpp";
+      for Spec_Suffix ("c") use ".h";
+      for Body_Suffix ("c") use ".c";
+      for Spec_Suffix ("ada") use ".ads";
+      for Body_Suffix ("ada") use ".adb";
+   end Naming;
+
+   package Binder is
+      for Required_Switches ("ada") use Binder'Required_Switches ("Ada") & ("gnatbind_prefix=");
+      for Objects_Path_File ("ada") use "ADA_PRJ_OBJECTS_FILE";
+      for Driver ("ada") use "C:\GNAT\2019\libexec/gprbuild/gprbind";
+   end Binder;
+
+   package Linker is
+      for Export_File_Format use "GNU";
+      for Export_File_Switch use "-Wl,--version-script=";
+      for Map_File_Option use "-Wl,-Map,";
+      for Driver use Compiler'Driver ("Ada");
+      for Response_File_Format use "GCC_GNU";
+      for Max_Command_Line_Length use "8192";
+   end Linker;
+
+   package Clean is
+      for Source_Artifact_Extensions ("ada") use (".dg", ".rep");
+      for Object_Artifact_Extensions ("ada") use (".s", ".ci", ".gcno", ".su");
+      for Source_Artifact_Extensions ("c") use (".gli");
+      for Object_Artifact_Extensions ("c") use (".s", "ci", ".gcno", ".su");
+      for Source_Artifact_Extensions ("c++") use (".gli");
+      for Object_Artifact_Extensions ("c++") use (".s", "ci", ".gcno", ".su");
+      for Artifacts_In_Object_Dir use Clean'Artifacts_In_Object_Dir & ("gnatinspect.*");
+   end Clean;
+
+end Default;
+

@@ -1,0 +1,156 @@
+V "GNAT Lib v2019"
+M P W=b
+A -gnatA
+A -gnatwa
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DELAY
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+RV MAX_ENTRY_QUEUE_LENGTH=1+
+
+U main%b		main.adb		35693de6 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.real_time%s	a-reatim.adb		a-reatim.ali
+Z ada.real_time.delays%s  a-retide.adb		a-retide.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W display%s		display.ads		display.ali
+W display.basic%s	display-basic.adb	display-basic.ali
+Z interfaces%s		interfac.ads		interfac.ali
+W mars_lander%s		mars_lander.adb		mars_lander.ali
+Z system%s		system.ads		system.ali
+Z system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.tasking.protected_objects%s  s-taprob.adb  s-taprob.ali
+Z system.tasking.protected_objects.operations%s  s-tpobop.adb  s-tpobop.ali
+
+D ada.ads		20190518041256 76789da1 ada%s
+D a-except.ads		20190518041256 291912d5 ada.exceptions%s
+D a-finali.ads		20190518041256 bf4f806b ada.finalization%s
+D a-ioexce.ads		20190518041256 e4a01f64 ada.io_exceptions%s
+D a-reatim.ads		20190518041258 0240fc73 ada.real_time%s
+D a-retide.ads		20190518041258 081cdaa4 ada.real_time.delays%s
+D a-stream.ads		20190518041256 119b8fb3 ada.streams%s
+D a-tags.ads		20190518041258 491b781d ada.tags%s
+D a-textio.ads		20190518041258 aef4d56d ada.text_io%s
+D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
+D display.ads		20200128155808 3a88167c display%s
+D display-basic.ads	20200121120804 66d43323 display.basic%s
+D interfac.ads		20190518041256 5ab55268 interfaces%s
+D i-c.ads		20190518041256 5421119b interfaces.c%s
+D i-cexten.ads		20190518041256 38d7e116 interfaces.c.extensions%s
+D i-cstrin.ads		20190518041256 341d0ddf interfaces.c.strings%s
+D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
+D main.adb		20200130184202 2341e657 main%b
+D mars_lander.ads	20200130184840 e6c0d7f0 mars_lander%s
+D sdl_blendmode_h.ads	20200121120806 e308a3b6 sdl_blendmode_h%s
+D sdl_pixels_h.ads	20200121120806 89492fa8 sdl_pixels_h%s
+D sdl_rect_h.ads	20200121120806 5db03fa9 sdl_rect_h%s
+D sdl_rwops_h.ads	20200121120806 d60b2061 sdl_rwops_h%s
+D sdl_stdinc_h.ads	20200121120806 76b5d89f sdl_stdinc_h%s
+D sdl_surface_h.ads	20200121120806 da149c96 sdl_surface_h%s
+D stdarg_h.ads		20200121120806 db698406 stdarg_h%s
+D stddef_h.ads		20200121120806 f49cc756 stddef_h%s
+D stdint_h.ads		20200121120806 376ae00b stdint_h%s
+D system.ads		20190518041258 32a08138 system%s
+D s-atacco.ads		20190518041258 4c36d12f system.address_to_access_conversions%s
+D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
+D s-exctab.ads		20190518041256 54135002 system.exception_table%s
+D s-ficobl.ads		20190518041258 078245e4 system.file_control_block%s
+D s-finroo.ads		20190518041258 4ff27390 system.finalization_root%s
+D s-imenne.ads		20190518041256 614c06c0 system.img_enum_new%s
+D s-multip.ads		20190518041256 38ac9f73 system.multiprocessors%s
+D s-osinte.ads		20190518041258 97504df8 system.os_interface%s
+D s-parame.ads		20190518041258 48ec542b system.parameters%s
+D s-secsta.ads		20190518041258 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20190518041256 a7318a92 system.soft_links%s
+D s-stache.ads		20190518041258 a37c21ec system.stack_checking%s
+D s-stausa.ads		20190518041256 017a0a05 system.stack_usage%s
+D s-stalib.ads		20190518041258 09bd3940 system.standard_library%s
+D s-stoele.ads		20190518041258 2dc34a04 system.storage_elements%s
+D s-tasinf.ads		20190518041258 601f6b72 system.task_info%s
+D s-taspri.ads		20190518041258 6c1d93d4 system.task_primitives%s
+D s-taprop.ads		20190518041258 1dd2e1b6 system.task_primitives.operations%s
+D s-taskin.ads		20190518041258 b9d612e2 system.tasking%s
+D s-taprob.ads		20190518041258 acd6094d system.tasking.protected_objects%s
+D s-tpoben.ads		20190518041258 60ad3dae system.tasking.protected_objects.entries%s
+D s-tpobop.ads		20190518041258 5f548bb3 system.tasking.protected_objects.operations%s
+D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
+D s-win32.ads		20190518041256 90ecf4e6 system.win32%s
+G a e
+G c Z b b [main standard 9 11 none]
+G r s lander_type [main standard 9 11 none] [lander_typeIP mars_lander 16 9 none]
+G r c none [main standard 9 11 none] [create_window display__basic 25 13 none]
+G r c none [main standard 9 11 none] [get_canvas display__basic 33 13 none]
+G r c none [main standard 9 11 none] [init mars_lander 12 14 none]
+G r c none [main standard 9 11 none] [is_killed display__basic 350 12 none]
+G r p none [main standard 9 11 none] [draw mars_lander__protected_lander 9 17 none]
+G r o none [main standard 9 11 none] [user_input mars_lander__protected_lander 10 13 none]
+G r o none [main standard 9 11 none] [step mars_lander__protected_lander 8 13 none]
+G r c none [main standard 9 11 none] [swap_buffers display__basic 337 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 18|1r6 1r25 2r6 2r23
+X 5 a-reatim.ads
+39K13*Real_Time 185e18 18|1w10 1r29
+49O9*Time<duration> 18|11r11
+54O9*Time_Span<duration> 18|15r22
+61V13*Clock{49O9} 18|41s12
+65V14*"+"{49O9} 18|41s18 74s20
+119V13*Milliseconds{54O9} 18|15s35
+X 9 a-textio.ads
+57K13*Text_IO 727e16 18|2w10 2r27
+508U14*Put_Line 18|61s7
+X 11 display.ads
+23K9*Display 59e12 18|4w6 4r25 5r6 5r25
+X 12 display-basic.ads
+20K17*Basic 363e18 18|5w14 5r33
+23I9*Window_ID<356I9> 18|18r13
+25V13*Create_Window{23I9} 18|35s6
+31I9*Canvas_ID<359I9> 18|21r13
+33V13*Get_Canvas{31I9} 18|38s14
+55E9*Key_T 299e26 18|30r9
+56n7*SDLK_UNKNOWN{55E9} 18|52r14
+337U14*Swap_Buffers 18|68s7
+350V12*Is_Killed{boolean} 18|49s14
+356I9 Window_ID_Range<short_short_integer>
+359I9 Canvas_ID_Range<short_integer>
+X 18 main.adb
+9U11*Main 9b11 77l5 77t9
+11o4 Next{5|49O9} 41m4 71r19 74m7 74r15
+15o4 Period{5|54O9} 41r20 74r22
+18i4 Window{12|23I9} 34m4 38r26 68r21
+21i4 Canvas{12|31I9} 38m4 56r39
+23N4 Width 35r21
+24N4 Height 35r28
+27r4 Mars_Lander{19|6R9} 44m20 44r20 55m39 55r39 64m39 64r39
+30e4 Key{12|55E9} 52m7 59m50 59r50 61r16 65r38
+X 19 mars_lander.ads
+4K9*Mars_Lander 18|6w6 6r25 19|26e16
+6R9*Lander_Type 18|27r18 19|24e14
+7w14*protected_lander 18|55r7 59r7 64r7
+8Y13 Step 18|64s24
+8r19 lander{6R9} 18|64r29
+8e47 key{12|55E9} 18|65r29
+9U17 Draw 18|55s24
+9r23 lander{6R9} 18|55r29
+9i51 canvas{12|31I9} 18|56r29
+10Y13 User_Input 18|59s24
+10e25 pressed_key{12|55E9} 18|59r35
+12U14*Init 18|44s4
+12r20 lander{6R9} 18|44r9
+12f48 speed_x{float} 18|45r9
+12f64 speed_y{float} 18|46r9
+X 42 s-stausa.ads
+203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
+268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
+

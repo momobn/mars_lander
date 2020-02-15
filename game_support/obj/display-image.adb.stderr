@@ -1,0 +1,5 @@
+display-image.adb:9:21: warning: "SDL_surface_h" is already use-visible through previous use_clause at display.ads:21
+display-image.adb:43:07: warning: "Surface" is not modified, could be declared constant
+display-image.adb:58:16: warning: use clause for type "Interfaces.C.Pointers.Pointer" from instance at line 33 has no effect
+display-image.adb:63:16: warning: "Colors" is not modified, could be declared constant
+display-image.adb:71:25: warning: "Color" is not modified, could be declared constant

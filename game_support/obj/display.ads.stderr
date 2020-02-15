@@ -1,0 +1,3 @@
+display.ads:20:06: warning: unit "System" is not referenced
+display.ads:21:06: warning: no entities of "SDL_surface_h" are referenced
+display.ads:21:21: warning: use clause for package "SDL_surface_h" has no effect

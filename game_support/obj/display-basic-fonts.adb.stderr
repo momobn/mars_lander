@@ -1,0 +1,6 @@
+display-basic-fonts.adb:3:06: warning: no entities of "SDL_video_h" are referenced
+display-basic-fonts.adb:501:29: warning: formal parameter "BG_Transparent" is not referenced
+display-basic-fonts.adb:529:07: warning: constant "Char_Index" is not referenced
+display-basic-fonts.adb:572:07: warning: constant "Char_Index" is not referenced
+display-basic-fonts.adb:615:07: warning: constant "Char_Index" is not referenced
+display-basic-fonts.ads:3:21: warning: "SDL_surface_h" is already use-visible through previous use_clause at display.ads:21

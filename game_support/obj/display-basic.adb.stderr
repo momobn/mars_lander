@@ -1,0 +1,38 @@
+display-basic.adb:23:06: warning: redundant with clause
+display-basic.adb:23:21: warning: "SDL_surface_h" is already use-visible through previous use_clause at display.ads:21
+display-basic.adb:23:25: warning: "SDL_surface_h" is already use-visible through previous use_clause at line 21
+display-basic.adb:35:12: warning: unit "System.Address_To_Access_Conversions" is not referenced
+display-basic.adb:38:06: warning: no entities of "SDL_pixels_h" are referenced
+display-basic.adb:82:07: warning: variable "C" is not referenced
+display-basic.adb:134:07: warning: "C" is not modified, could be declared constant
+display-basic.adb:135:07: warning: "S" is not modified, could be declared constant
+display-basic.adb:136:07: warning: "Z" is not modified, could be declared constant
+display-basic.adb:148:07: warning: variable "C" is not referenced
+display-basic.adb:149:07: warning: "Z" is not modified, could be declared constant
+display-basic.adb:294:07: warning: "IC" is not modified, could be declared constant
+display-basic.adb:311:31: warning: formal parameter "Canvas" is not referenced
+display-basic.adb:317:32: warning: formal parameter "Canvas" is not referenced
+display-basic.adb:377:24: warning: formal parameter "Window" is not referenced
+display-basic.adb:391:07: warning: "IC" is not modified, could be declared constant
+display-basic.adb:425:13: warning: "IC" is not modified, could be declared constant
+display-basic.adb:455:25: warning: formal parameter "Canvas" is not referenced
+display-basic.adb:477:95: warning: formal parameter "Bg_Color" is not referenced
+display-basic.adb:480:07: warning: "IC" is not modified, could be declared constant
+display-basic.adb:482:07: warning: "Font" is not modified, could be declared constant
+display-basic.adb:483:07: warning: "w" is not modified, could be declared constant
+display-basic.adb:484:07: warning: "h" is not modified, could be declared constant
+display-basic.adb:556:99: warning: formal parameter "Bg_Color" is not referenced
+display-basic.adb:558:07: warning: "IC" is not modified, could be declared constant
+display-basic.adb:560:07: warning: "Font" is not modified, could be declared constant
+display-basic.adb:561:07: warning: "w" is not modified, could be declared constant
+display-basic.adb:562:07: warning: "h" is not modified, could be declared constant
+display-basic.adb:618:07: warning: "C" is not modified, could be declared constant
+display-basic.adb:641:07: warning: "IC" is not modified, could be declared constant
+display-basic.adb:667:12: warning: package "Texture_Pointers" is not referenced
+display-basic.adb:670:26: warning: formal parameter "Canvas" is not referenced
+display-basic.adb:732:07: warning: "C" is not modified, could be declared constant
+display-basic.adb:761:08: warning: "C" is not modified, could be declared constant
+display-basic.adb:777:07: warning: "C" is not modified, could be declared constant
+display-basic.adb:785:07: warning: "C" is not modified, could be declared constant
+display-basic.adb:793:07: warning: "IC" is not modified, could be declared constant
+display-basic.adb:1353:47: warning: formal parameter "Erase" is not referenced

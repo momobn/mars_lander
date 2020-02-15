@@ -1,0 +1,4 @@
+display-basic-glfonts.adb:1:21: warning: "SDL_surface_h" is already use-visible through previous use_clause at display.ads:21
+display-basic-glfonts.adb:27:07: warning: "SDL_PIXELFORMAT_ABGR8888" is not modified, could be declared constant
+display-basic-glfonts.adb:33:07: warning: "SDL_PIXELFORMAT_RGBA32" is not modified, could be declared constant
+display-basic-glfonts.adb:43:07: warning: variable "Format" is not referenced
