@@ -4,6 +4,7 @@ with Ada.Text_IO; use Ada.Text_IO;
 with Display;       use Display;
 with Display.Basic; use Display.Basic;
 with Mars_Lander;   use Mars_Lander;
+with Terrain;       use Terrain;
 
 
 procedure Main is
@@ -45,6 +46,9 @@ begin
         speed_x => 1.0,
         speed_y => 6.0);
 
+   -- generate and draw terrain
+   Terrain_Object.Generate(window_width => Width);
+
    -- game loop
    while not Is_Killed loop
 
@@ -55,10 +59,12 @@ begin
       protected_lander.Draw(lander => Mars_Lander,
                             canvas => Canvas);
 
+      Terrain_Object.Get_Terrain(canvas => Canvas);
+
       -- define the pressed key
       protected_lander.User_Input(pressed_key => Key);
 
-      Put_Line(Key'Image);
+      --Put_Line(Key'Image);
 
       -- change lander parameters
       protected_lander.Step(lander => Mars_Lander,

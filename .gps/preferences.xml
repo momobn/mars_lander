@@ -15,7 +15,6 @@
 
 GtkTextView { -GtkWidget-cursor-color: #000000; }
 </pref>
-  <pref name="explorer-show-absolute-paths" >TRUE</pref>
   <pref name="Src-Editor-Current-Block-Color" >rgb(226,226,226)</pref>
   <pref name="explorer-show-hidden-directories" >TRUE</pref>
   <pref name="/Color-Theme" >Default</pref>

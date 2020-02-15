@@ -28,18 +28,13 @@ RV NO_ELABORATION_CODE
 RV SPARK_05
 RV MAX_PROTECTED_ENTRIES=2
 
-U mars_lander%b		mars_lander.adb		821217f7 NE OO PK
+U mars_lander%b		mars_lander.adb		82015b90 NE OO PK
 W ada%s			ada.ads			ada.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W display%s		display.ads		display.ali
 W display.image%s	display-image.adb	display-image.ali
 Z system%s		system.ads		system.ali
-Z system.concat_3%s	s-conca3.adb		s-conca3.ali
-Z system.concat_5%s	s-conca5.adb		s-conca5.ali
-Z system.img_bool%s	s-imgboo.adb		s-imgboo.ali
-Z system.img_int%s	s-imgint.adb		s-imgint.ali
-Z system.img_real%s	s-imgrea.adb		s-imgrea.ali
 Z system.soft_links%s	s-soflin.adb		s-soflin.ali
 Z system.tasking.protected_objects%s  s-taprob.adb  s-taprob.ali
 Z system.tasking.protected_objects.entries%s  s-tpoben.adb  s-tpoben.ali
@@ -75,7 +70,7 @@ D i-cexten.ads		20190518041256 38d7e116 interfaces.c.extensions%s
 D i-cstrin.ads		20190518041256 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
 D mars_lander.ads	20200130184840 e6c0d7f0 mars_lander%s
-D mars_lander.adb	20200130190022 90cfff94 mars_lander%b
+D mars_lander.adb	20200215155518 90dcb3f3 mars_lander%b
 D sdl_blendmode_h.ads	20200121120806 e308a3b6 sdl_blendmode_h%s
 D sdl_pixels_h.ads	20200121120806 89492fa8 sdl_pixels_h%s
 D sdl_rect_h.ads	20200121120806 5db03fa9 sdl_rect_h%s
@@ -87,15 +82,10 @@ D stddef_h.ads		20200121120806 f49cc756 stddef_h%s
 D stdint_h.ads		20200121120806 376ae00b stdint_h%s
 D system.ads		20190518041258 32a08138 system%s
 D s-atacco.ads		20190518041258 4c36d12f system.address_to_access_conversions%s
-D s-conca3.ads		20190518041258 0b705ca5 system.concat_3%s
-D s-conca5.ads		20190518041256 875e432e system.concat_5%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
 D s-exctab.ads		20190518041256 54135002 system.exception_table%s
 D s-ficobl.ads		20190518041258 078245e4 system.file_control_block%s
 D s-finroo.ads		20190518041258 4ff27390 system.finalization_root%s
-D s-imgboo.ads		20190518041256 f5d971eb system.img_bool%s
-D s-imgint.ads		20190518041256 02dbe0c2 system.img_int%s
-D s-imgrea.ads		20190518041256 c7a851e2 system.img_real%s
 D s-memory.ads		20190518041256 597d6634 system.memory%s
 D s-multip.ads		20190518041256 38ac9f73 system.multiprocessors%s
 D s-osinte.ads		20190518041258 97504df8 system.os_interface%s
@@ -145,7 +135,6 @@ X 1 ada.ads
 16K9*Ada 20e8 18|1r6 1r23
 X 7 a-textio.ads
 57K13*Text_IO 727e16 18|1w10 1r27
-508U14*Put_Line 18|95s10 96s10 97s10 98s10 99s10 100s10
 X 9 display.ads
 23K9*Display 59e12 17|1w6 1r25 2r6 2r25 18|4r6 4r25
 39r4*Red{27R9} 18|167r35 174r35
@@ -156,9 +145,9 @@ X 10 display-basic.ads
 31I9*Canvas_ID<359I9> 17|9r59 18|123r59
 40R9*Point_3d 44e14 17|18r17 19r14 20r21 21r16 18|13r19 23r28 126r27
 41f7*X{float} 18|31r60 57r37 58m36 58r61 60m36 60r61 69r36 70m36 70r61 72m36
-. 72r61 95r47 97r46 98r60
+. 72r61
 42f7*Y{float} 18|26r29 31r29 52r36 53m36 53r61 55m36 55r61 64r36 65m36 65r61
-. 67m36 67r61 83r26 89r33 95r80 97r76 98r97 138r33 140r36
+. 67m36 67r61 83r26 89r33 138r33 140r36
 46R9*Screen_Point 48e14 18|129r19
 47i7*X{integer} 18|162m21 162r78 169m21 169r73
 47i10*Y{integer} 18|163m21 170m21
@@ -196,8 +185,7 @@ X 17 mars_lander.ads
 8Y13 Step 8=19 8>47 18|21b13 104l11 104t15
 8r19 lander{6R9} 18|27m13 28m13 29m13 30m13 32m16 34r16 34r48 35m16 41r16
 . 42m16 43r19 44m16 46m13 46r33 49m13 49r33 76m13 81m10 81r26 81r42 81r64
-. 83r44 83r76 84m13 84r32 84r70 84r90 86m13 86r32 86r70 86r90 96r31 99r35
-. 99r78
+. 83r44 83r76 84m13 84r32 84r70 84r90 86m13 86r32 86r70 86r90
 8e47 key{10|55E9} 18|39r15
 9U17 Draw 9=23 9>51 18|123b17 179l11 179t15
 9r23 lander{6R9} 18|123b23 138r13 140r16 149r33 152r33 161r13 161r37 168r16
@@ -210,18 +198,17 @@ X 17 mars_lander.ads
 12f48 speed_x{float} 18|204b48 206r27
 12f64 speed_y{float} 18|204b64 206r36
 17f7*Direction{float} 18|34r23 34r55 41r23 42m23 43r26 44m23 46m20 46r40
-. 49m20 49r40 83r51 83r83 84r77 86r77 96r38 152r40
-18r7*Position{10|40R9} 18|26r20 84m20 84r39 86m20 86r39 95r38 95r71 149r40
-19r7*Speed{10|40R9} 18|28m20 31r23 31r54 81m17 81r33 83r20 84r97 86r97 97r40
-. 97r70 206m17
+. 49m20 49r40 83r51 83r83 84r77 86r77 152r40
+18r7*Position{10|40R9} 18|26r20 84m20 84r39 86m20 86r39 149r40
+19r7*Speed{10|40R9} 18|28m20 31r23 31r54 81m17 81r33 83r20 84r97 86r97 206m17
 20r7*Acceleration{10|40R9} 18|29m20 52r23 53m23 53r48 55m23 55r48 57r24 58m23
 . 58r48 60m23 60r48 64r23 65m23 65r48 67m23 67r48 69r23 70m23 70r48 72m23
-. 72r48 76m20 81r49 89r20 98r47 98r84 138r20 140r23
+. 72r48 76m20 81r49 89r20 138r20 140r23
 21r7*Gravity{10|40R9} 18|30m20 81r71
-22b7*stopped{boolean} 18|27m20 99r42 161r20 168r23
-23b7*crushed{boolean} 18|32m23 35m23 99r85 161r44 168r47
+22b7*stopped{boolean} 18|27m20 161r20 168r23
+23b7*crushed{boolean} 18|32m23 35m23 161r44 168r47
 X 18 mars_lander.adb
-9i4 propulsed_time{integer} 90m13 90r31 92m13 100r42 142r16
+9i4 propulsed_time{integer} 90m13 90r31 92m13 142r16
 11b4 Is_Drawn{boolean} 177m10 181r57 198m10
 12b4 Is_Put{boolean} 21r64 102m10 199m10
 13r4 inv{10|40R9} 84r105
@@ -242,17 +229,17 @@ X 18 mars_lander.adb
 181e25 pressed_key{10|55E9}
 X 28 system.ads
 67M9*Address
-X 39 s-memory.ads
+X 34 s-memory.ads
 53V13*Alloc{28|67M9} 103i<c,__gnat_malloc>22
 68U14*Free 104i<c,__gnat_free>22
 76V13*Realloc{28|67M9} 105i<c,__gnat_realloc>22
-X 46 s-stausa.ads
+X 41 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
-X 48 s-stalib.adb
+X 43 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
-X 60 vector.ads
-3K9*Vector 18|3w6 3r18 60|11e11
+X 55 vector.ads
+3K9*Vector 18|3w6 3r18 55|11e11
 5V14*"+"{10|40R9} 18|81s39 81s62 84s48 86s48
 7V14*"*"{10|40R9} 18|81s80 84s88 84s103 84s109 86s88 86s103
 9V13*From_Angle{10|40R9} 18|84s50 86s50

@@ -2469,3 +2469,8 @@
 [GPS.KERNEL.ACTIONS] Could not execute "delete file" (13:21:17.472)
 [GPS.KERNEL.ACTIONS] Could not execute "backward delete" (13:21:17.472)
 [GPS.KERNEL.ACTIONS] Could not execute "debug tree remove selected variables" (13:21:17.473)
+[GPS.OTHERS.GTK+] Gdk-CRITICAL: inner_clipboard_window_procedure: assertion 'success' failed (13:30:59.708)
+[GPS.OTHERS.GTK+] Gdk-CRITICAL: inner_clipboard_window_procedure: assertion 'success' failed (13:31:01.019)
+[GPS.OTHERS.GTK+] Gdk-CRITICAL: inner_clipboard_window_procedure: assertion 'success' failed (13:32:49.378)
+[GPS.OTHERS.GTK+] Gdk-CRITICAL: inner_clipboard_window_procedure: assertion 'success' failed (13:33:21.159)
+[GPS.KERNEL.GPS_KERNEL] Refresh_Context no child (13:44:20.103)
