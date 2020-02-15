@@ -23,7 +23,7 @@ package body ada_main is
    E047 : Short_Integer; pragma Import (Ada, E047, "system__dwarf_lines_E");
    E021 : Short_Integer; pragma Import (Ada, E021, "system__soft_links__initialize_E");
    E039 : Short_Integer; pragma Import (Ada, E039, "system__traceback__symbolic_E");
-   E222 : Short_Integer; pragma Import (Ada, E222, "ada__numerics_E");
+   E210 : Short_Integer; pragma Import (Ada, E210, "ada__numerics_E");
    E132 : Short_Integer; pragma Import (Ada, E132, "ada__tags_E");
    E140 : Short_Integer; pragma Import (Ada, E140, "ada__streams_E");
    E103 : Short_Integer; pragma Import (Ada, E103, "interfaces__c__strings_E");
@@ -32,19 +32,23 @@ package body ada_main is
    E145 : Short_Integer; pragma Import (Ada, E145, "ada__finalization_E");
    E144 : Short_Integer; pragma Import (Ada, E144, "system__file_io_E");
    E118 : Short_Integer; pragma Import (Ada, E118, "system__task_info_E");
+   E229 : Short_Integer; pragma Import (Ada, E229, "ada__calendar_E");
    E006 : Short_Integer; pragma Import (Ada, E006, "ada__real_time_E");
    E138 : Short_Integer; pragma Import (Ada, E138, "ada__text_io_E");
-   E207 : Short_Integer; pragma Import (Ada, E207, "system__tasking__initialization_E");
-   E197 : Short_Integer; pragma Import (Ada, E197, "system__tasking__protected_objects_E");
-   E203 : Short_Integer; pragma Import (Ada, E203, "system__tasking__protected_objects__entries_E");
-   E215 : Short_Integer; pragma Import (Ada, E215, "system__tasking__queuing_E");
+   E227 : Short_Integer; pragma Import (Ada, E227, "system__random_seed_E");
+   E195 : Short_Integer; pragma Import (Ada, E195, "system__tasking__initialization_E");
+   E185 : Short_Integer; pragma Import (Ada, E185, "system__tasking__protected_objects_E");
+   E191 : Short_Integer; pragma Import (Ada, E191, "system__tasking__protected_objects__entries_E");
+   E203 : Short_Integer; pragma Import (Ada, E203, "system__tasking__queuing_E");
+   E223 : Short_Integer; pragma Import (Ada, E223, "perlin_E");
    E149 : Short_Integer; pragma Import (Ada, E149, "display_E");
    E183 : Short_Integer; pragma Import (Ada, E183, "display__image_E");
    E161 : Short_Integer; pragma Import (Ada, E161, "display__basic_E");
    E168 : Short_Integer; pragma Import (Ada, E168, "display__basic__glfonts_E");
    E166 : Short_Integer; pragma Import (Ada, E166, "display__basic__utils_E");
    E163 : Short_Integer; pragma Import (Ada, E163, "display__basic__fonts_E");
-   E221 : Short_Integer; pragma Import (Ada, E221, "vector_E");
+   E221 : Short_Integer; pragma Import (Ada, E221, "terrain_E");
+   E209 : Short_Integer; pragma Import (Ada, E209, "vector_E");
    E181 : Short_Integer; pragma Import (Ada, E181, "mars_lander_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
@@ -63,26 +67,33 @@ package body ada_main is
       begin
          F1;
       end;
-      E203 := E203 - 1;
+      E221 := E221 - 1;
       declare
          procedure F2;
-         pragma Import (Ada, F2, "system__tasking__protected_objects__entries__finalize_spec");
+         pragma Import (Ada, F2, "terrain__finalize_spec");
       begin
          F2;
       end;
-      E138 := E138 - 1;
+      E191 := E191 - 1;
       declare
          procedure F3;
-         pragma Import (Ada, F3, "ada__text_io__finalize_spec");
+         pragma Import (Ada, F3, "system__tasking__protected_objects__entries__finalize_spec");
       begin
          F3;
       end;
+      E138 := E138 - 1;
       declare
          procedure F4;
-         pragma Import (Ada, F4, "system__file_io__finalize_body");
+         pragma Import (Ada, F4, "ada__text_io__finalize_spec");
+      begin
+         F4;
+      end;
+      declare
+         procedure F5;
+         pragma Import (Ada, F5, "system__file_io__finalize_body");
       begin
          E144 := E144 - 1;
-         F4;
+         F5;
       end;
       declare
          procedure Reraise_Library_Exception_If_Any;
@@ -184,7 +195,7 @@ package body ada_main is
          Value => (0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
          Violated =>
           (True, True, False, False, True, True, False, False, 
-           False, False, False, True, True, True, True, False, 
+           True, False, False, True, True, True, True, False, 
            False, False, False, False, True, True, False, True, 
            True, False, True, True, True, True, False, False, 
            False, False, False, True, False, False, True, False, 
@@ -246,7 +257,7 @@ package body ada_main is
       System.Traceback.Symbolic'Elab_Body;
       E039 := E039 + 1;
       Ada.Numerics'Elab_Spec;
-      E222 := E222 + 1;
+      E210 := E210 + 1;
       Ada.Tags'Elab_Spec;
       Ada.Tags'Elab_Body;
       E132 := E132 + 1;
@@ -264,20 +275,26 @@ package body ada_main is
       E144 := E144 + 1;
       System.Task_Info'Elab_Spec;
       E118 := E118 + 1;
+      Ada.Calendar'Elab_Spec;
+      Ada.Calendar'Elab_Body;
+      E229 := E229 + 1;
       Ada.Real_Time'Elab_Spec;
       Ada.Real_Time'Elab_Body;
       E006 := E006 + 1;
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
       E138 := E138 + 1;
+      System.Random_Seed'Elab_Body;
+      E227 := E227 + 1;
       System.Tasking.Initialization'Elab_Body;
-      E207 := E207 + 1;
+      E195 := E195 + 1;
       System.Tasking.Protected_Objects'Elab_Body;
-      E197 := E197 + 1;
+      E185 := E185 + 1;
       System.Tasking.Protected_Objects.Entries'Elab_Spec;
-      E203 := E203 + 1;
+      E191 := E191 + 1;
       System.Tasking.Queuing'Elab_Body;
-      E215 := E215 + 1;
+      E203 := E203 + 1;
+      E223 := E223 + 1;
       Display'Elab_Spec;
       E149 := E149 + 1;
       Display.Image'Elab_Body;
@@ -290,7 +307,9 @@ package body ada_main is
       E161 := E161 + 1;
       Display.Basic.Glfonts'Elab_Body;
       E168 := E168 + 1;
+      Terrain'Elab_Spec;
       E221 := E221 + 1;
+      E209 := E209 + 1;
       Mars_Lander'Elab_Spec;
       E181 := E181 + 1;
    end adainit;
@@ -330,6 +349,7 @@ package body ada_main is
 --  BEGIN Object file/option list
    --   E:\eidd-3A\temps reels\mars_lander_lab\gnat_sdl\obj\gl_gl_h.o
    --   E:\eidd-3A\temps reels\mars_lander_lab\gnat_sdl\obj\gl_glu_h.o
+   --   E:\eidd-3A\temps reels\mars_lander_lab\game_support\obj\perlin.o
    --   E:\eidd-3A\temps reels\mars_lander_lab\gnat_sdl\obj\sdl_blendmode_h.o
    --   E:\eidd-3A\temps reels\mars_lander_lab\gnat_sdl\obj\sdl_error_h.o
    --   E:\eidd-3A\temps reels\mars_lander_lab\gnat_sdl\obj\sdl_scancode_h.o
@@ -355,6 +375,7 @@ package body ada_main is
    --   E:\eidd-3A\temps reels\mars_lander_lab\game_support\obj\display-basic-fonts.o
    --   E:\eidd-3A\temps reels\mars_lander_lab\game_support\obj\display-basic.o
    --   E:\eidd-3A\temps reels\mars_lander_lab\game_support\obj\display-basic-glfonts.o
+   --   E:\eidd-3A\temps reels\mars_lander_lab\game_support\obj\terrain.o
    --   E:\eidd-3A\temps reels\mars_lander_lab\game_support\obj\vector.o
    --   E:\eidd-3A\temps reels\mars_lander_lab\game_support\obj\mars_lander.o
    --   E:\eidd-3A\temps reels\mars_lander_lab\obj\main.o
