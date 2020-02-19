@@ -18,7 +18,7 @@ private
       Position: Point_3d := (20.0, 300.0, 0.0);
       Speed: Point_3d;
       Acceleration: Point_3d := (0.0, 0.0, 0.0);
-      Gravity: Point_3d := (0.0, -3.5, 0.0);
+      Gravity: Point_3d := (0.0, -2.8, 0.0);
       stopped: Boolean := False;
       crushed: Boolean := False;
    end record;

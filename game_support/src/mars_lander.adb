@@ -109,7 +109,7 @@ package body Mars_Lander is
                lander.Acceleration.Y := lander.Acceleration.Y + 2.0;
             end if;
              if lander.Acceleration.X > 0.0 then 
-               lander.Acceleration.X := lander.Acceleration.X + 0.1;
+               lander.Acceleration.X := lander.Acceleration.X + 0.15;
             else
                lander.Acceleration.X := lander.Acceleration.X + 2.0;
             end if;
@@ -177,13 +177,19 @@ package body Mars_Lander is
       procedure Draw (lander: in out Lander_Type; canvas: Canvas_ID) is
          
          -- background poition
-         bg_pos: constant Point_3d := (0.0, 0.0, -2.0);
+         bg_pos : constant Point_3d := (0.0, 0.0, -2.0);
    
          -- text position
-         txt_pos: Screen_Point;
+         txt_pos : Screen_Point;
+         
+         -- info pos
+         info_pos : constant Screen_Point := (80, 550);
+         
+         -- info speed
+         info_speed : constant Screen_Point := (80, 570);
          
          -- load the lander image in bmp form
-         lander_image: Image_T := null;
+         lander_image : Image_T := null;
          
          lander_spritemap : Image_T := Load_BMP(File => "mars_lander.bmp");
          
@@ -211,19 +217,30 @@ package body Mars_Lander is
                     Rotation => 0.0,
                     Image    => Load_BMP("sky.bmp"));
          
+         Draw_Text(Canvas   => canvas,
+                   Position => info_pos,
+                   Text     => "pos:" & lander.Position.X'Image & ", " & lander.Position.Y'Image,
+                   Color    => White);
+         
+         Draw_Text(Canvas   => canvas,
+                   Position => info_speed,
+                   Text     => "speed:" & lander.Speed.X'Image & ", " & lander.Speed.Y'Image,
+                   Color    => White);
+         
+         
          if lander.stopped and then lander.crushed = False then
             txt_pos.X := 400 - Get_Text_Size(Text => "Successfully landed!").X / 2;
             txt_pos.Y := 400;
             Draw_Text(Canvas   => canvas,
                       Position => txt_pos,
-                      Text     => "Successfully landed!",
-                      Color    => Red);
+                      Text     => "YEAH!!! Successfully landed!",
+                      Color    => Green);
          elsif lander.stopped and then lander.crushed then
             txt_pos.X := 400 - Get_Text_Size(Text => "Lander crushed!").X / 2;
             txt_pos.Y := 400;
             Draw_Text(Canvas   => canvas,
                       Position => txt_pos,
-                      Text     => "Lander crushed!",
+                      Text     => "OOOOOOPS!!! Lander crushed!",
                       Color    => Red);
          end if;
       

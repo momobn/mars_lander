@@ -24,10 +24,10 @@ package body Terrain is
          Game_Window_Width := window_width;
          for I in 1 .. Size loop
             My_Terrain(I) := 
-              (x_value, (Noise(X => inc / 1500.0) * 10.0 - 5.0) * 50.0, 1.0);
+              (x_value, (Noise(X => inc / 1500.0) * 10.0 - 5.0) * 50.0 - 80.0, 1.0);
             x_value := x_value + (Float(window_width) / Float(Size));
             inc := inc + Float(Random_value.Random(G) + Random_value.Random(G));
-            Put_Line("terrain_pt: [" & I'Image & "]( " & My_Terrain(I).X'Image & ", " & My_Terrain(I).Y'Image & " )");
+            Put_Line("terrain_pt: [" & I'Image & "](" & My_Terrain(I).X'Image & ", " & My_Terrain(I).Y'Image & " )");
          end loop;
          
          -- generate a surface to land

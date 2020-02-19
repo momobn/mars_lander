@@ -1,20 +1,16 @@
 <?xml version="1.0"?>
 <Clipboard>
-  <clipboard last="true" >            if lander.Acceleration.Y &gt; 0.0 then 
-               lander.Acceleration.Y := lander.Acceleration.Y * 0.2;
-            else
-               lander.Acceleration.Y := lander.Acceleration.Y - 0.2;</clipboard>
-  <clipboard> if lander.Acceleration.Y &gt; 0.0 then 
-               lander.Acceleration.Y := lander.Acceleration.Y + 0.1;
-            else
-               lander.Acceleration.Y := lander.Acceleration.Y + 2.0;
-            end if;</clipboard>
-  <clipboard>From_Angle(Angle =&gt; lander.Direction) * </clipboard>
-  <clipboard>lander.Acceleration := (0.0, 0.0, 0.0);</clipboard>
-  <clipboard>lander.Position := lander.Position + From_Angle(Angle =&gt; lander.Direction) * lander.Speed * inv * delta_t;</clipboard>
-  <clipboard>vec: Point_3d;</clipboard>
-  <clipboard>lander.Acceleration := (0.0, 0.0, 0.0);</clipboard>
-  <clipboard> range (0.0 .. 500, 0.0 .. 500, 0.0 .. 0.1)</clipboard>
-  <clipboard>From_Angle(Angle =&gt; lander.Direction * (-1.0)) * </clipboard>
-  <clipboard>lander.Position := lander.Position + From_Angle(Angle =&gt; lander.Direction) * lander.Speed * delta_t;</clipboard>
+  <clipboard last="true" >lander.Direction &gt; 15.0 or else lander.Direction &lt; -15.0</clipboard>
+  <clipboard>            lander.Speed := (0.0, 0.0, 0.0);
+            lander.Acceleration := (0.0, 0.0, 0.0);
+            lander.Gravity := (0.0, 0.0, 0.0);</clipboard>
+  <clipboard>terrain_index := 
+           Natural(lander.Position.X / ((Float(Game_Window_Width) / Float(Size))));</clipboard>
+  <clipboard>window_width: Natural; Game_Window_Width: out Natural ; Surface_Index: out Natural</clipboard>
+  <clipboard>window_width</clipboard>
+  <clipboard>widow_width</clipboard>
+  <clipboard>in out</clipboard>
+  <clipboard>Width</clipboard>
+  <clipboard>end if;</clipboard>
+  <clipboard>Mars_Terrain(terrain_index)</clipboard>
 </Clipboard>
