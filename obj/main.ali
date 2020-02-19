@@ -16,7 +16,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 RV MAX_ENTRY_QUEUE_LENGTH=1+
 
-U main%b		main.adb		96b8e33a NE OO SU
+U main%b		main.adb		2aa684f6 NE OO SU
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 Z ada.real_time.delays%s  a-retide.adb		a-retide.ali
@@ -49,7 +49,7 @@ D i-cexten.ads		20190518041256 38d7e116 interfaces.c.extensions%s
 D i-cstrin.ads		20190518041256 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
 D main.adb		20200215201536 7fee81ab main%b
-D mars_lander.ads	20200130184840 e6c0d7f0 mars_lander%s
+D mars_lander.ads	20200219154132 5adeb03c mars_lander%s
 D sdl_blendmode_h.ads	20200121120806 e308a3b6 sdl_blendmode_h%s
 D sdl_pixels_h.ads	20200121120806 89492fa8 sdl_pixels_h%s
 D sdl_rect_h.ads	20200121120806 5db03fa9 sdl_rect_h%s
