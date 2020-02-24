@@ -73,8 +73,8 @@ D a-tags.ads		20190518041258 491b781d ada.tags%s
 D a-textio.ads		20190518041258 aef4d56d ada.text_io%s
 D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
 D display.ads		20200128155808 3a88167c display%s
-D display-basic.ads	20200121120804 66d43323 display.basic%s
-D display-basic.adb	20200121120804 e220a47b display.basic%b
+D display-basic.ads	20200223211124 66d43323 display.basic%s
+D display-basic.adb	20200223211058 e220a47b display.basic%b
 D display-basic-fonts.ads  20200121120804 d0d61933 display.basic.fonts%s
 D display-basic-glfonts.ads  20200121120804 0910a01a display.basic.glfonts%s
 D display-basic-utils.ads  20200121120804 67cd8ba0 display.basic.utils%s
@@ -157,7 +157,7 @@ G c Z s b [get_cursor_status display__basic 344 13 none]
 G c Z s b [get_key_status display__basic 345 13 none]
 G c Z s b [to_point3d display__basic 347 13 none]
 G c Z s b [to_screen_point display__basic 348 13 none]
-G c Z s b [is_killed display__basic 350 12 none]
+G c Z s b [is_killed display__basic 350 13 none]
 G c Z s s [point_2dIP display__basic 35 9 none]
 G c Z s s [point_3dIP display__basic 40 9 none]
 G c Z s s [screen_pointIP display__basic 46 9 none]
@@ -187,7 +187,7 @@ G c Z b b [to_addr display__basic__texture_pointers 43 13 667_4]
 G c Z b b [to_ptrdiff display__basic__texture_pointers 44 13 667_4]
 G c Z b b [scale display__basic 758 13 none]
 G c Z b b [Tkeyboard_tBIP display__basic 801 4 none]
-G c Z b b [poll_events display__basic 812 16 none]
+G c Z b b [poll_events display__basic 812 14 none]
 G c Z b b [update_keyboard_status display__basic 844 14 none]
 G c Z b b [init display__basic 1393 14 none]
 G r c none [b display__basic 43 1 none] [sdl_init sdl_h 58 13 none]
@@ -418,31 +418,31 @@ G r c none [init_gl display__basic 181 13 none] [glunewquadric gl_glu_h 258 13 n
 G r c none [init_gl display__basic 181 13 none] [gllightfv gl_gl_h 1345 14 none]
 G r c none [init_gl display__basic 181 13 none] [glclearcolor gl_gl_h 733 14 none]
 G r c none [set_color display__basic 383 14 none] [glcolor3d gl_gl_h 761 14 none]
-G r s sdl_event [poll_events display__basic 812 16 none] [sdl_eventIP sdl_events_h 763 9 none]
-G r c none [poll_events display__basic 812 16 none] [sdl_pollevent sdl_events_h 938 13 none]
-G r c none [poll_events display__basic 812 16 none] [sdl_quit sdl_h 96 14 none]
-G r c none [poll_events display__basic 812 16 none] [get_internal_canvas display__basic__utils 33 13 none]
-G r c none [poll_events display__basic 812 16 none] [glmatrixmode gl_gl_h 1485 14 none]
-G r c none [poll_events display__basic 812 16 none] [glloadidentity gl_gl_h 1372 14 none]
-G r c none [poll_events display__basic 812 16 none] [glviewport gl_gl_h 2224 14 none]
-G r c none [poll_events display__basic 812 16 none] [glortho gl_gl_h 1548 14 none]
-G r c none [poll_events display__basic 812 16 none] [sdl_getwindowsurface sdl_video_h 1022 13 none]
-G r c none [poll_events display__basic 812 16 none] [update_sdl_surface display__basic__utils 32 14 none]
+G r s sdl_event [poll_events display__basic 812 14 none] [sdl_eventIP sdl_events_h 763 9 none]
+G r c none [poll_events display__basic 812 14 none] [sdl_pollevent sdl_events_h 938 13 none]
+G r c none [poll_events display__basic 812 14 none] [sdl_quit sdl_h 96 14 none]
+G r c none [poll_events display__basic 812 14 none] [get_internal_canvas display__basic__utils 33 13 none]
+G r c none [poll_events display__basic 812 14 none] [glmatrixmode gl_gl_h 1485 14 none]
+G r c none [poll_events display__basic 812 14 none] [glloadidentity gl_gl_h 1372 14 none]
+G r c none [poll_events display__basic 812 14 none] [glviewport gl_gl_h 2224 14 none]
+G r c none [poll_events display__basic 812 14 none] [glortho gl_gl_h 1548 14 none]
+G r c none [poll_events display__basic 812 14 none] [sdl_getwindowsurface sdl_video_h 1022 13 none]
+G r c none [poll_events display__basic 812 14 none] [update_sdl_surface display__basic__utils 32 14 none]
 G r c none [update_keyboard_status display__basic 844 14 none] [sdl_getkeyboardstate sdl_keyboard_h 79 13 none]
 G r c none [init display__basic 1393 14 none] [sdl_init sdl_h 58 13 none]
 G r c none [init display__basic 1393 14 none] [sdl_geterror sdl_error_h 45 13 none]
 G r c none [init display__basic 1393 14 none] [sdl_quit sdl_h 96 14 none]
 X 1 ada.ads
-16K9*Ada 20e8 10|25r6 25r23 195r11 198r11 208r10 211r10 218r14 335r14 339r11
+16K9*Ada 20e8 10|25r6 25r23 195r10 198r10 208r10 211r10 218r10 335r10 339r10
 . 367r10 1360r10
 X 6 a-textio.ads
-57K13*Text_IO 727e16 10|25w10 25r27 195r15 198r15 208r14 211r14 218r18 335r18
-. 339r15 367r14 1360r14
-508U14*Put_Line 10|195s23 198s23 208s22 211s22 218s26 335s26 339s23 358s10
+57K13*Text_IO 727e16 10|25w10 25r27 195r14 198r14 208r14 211r14 218r14 335r14
+. 339r14 367r14 1360r14
+508U14*Put_Line 10|195s22 198s22 208s22 211s22 218s22 335s22 339s22 358s10
 . 359s10 367s22 1360s22 1397s10 1398s10
 X 8 display.ads
 23K9*Display 59e12 9|20r9 363r5 10|36r6 36r31 41r6 41r31 42r6 42r33 43r14
-. 84r7 763r7 768r8 773r16 1413r5
+. 84r7 763r7 768r7 773r14 1413r5
 25M9*Color_Component_T
 27R9*RGBA_T 32e15 9|301r46 302r90 303r96 304r90 305r96 306r81 307r89 308r87
 . 308r106 309r91 309r110 310r97 311r103 312r115 315r102 316r108 317r78 323r44
@@ -457,7 +457,7 @@ X 8 display.ads
 46P9*Image_T(45A9) 9|313r116 314r98 10|670r116 721r98
 X 9 display-basic.ads
 20K17*Basic 8|23k9 9|356E9 363l13 363e18 10|36r14 36r39 41r14 41r39 42r14
-. 42r41 43b22 84r15 763r15 768r16 773r24 1413l13 1413t18
+. 42r41 43b22 84r15 763r15 768r15 773r22 1413l13 1413t18
 23I9*Window_ID<356I9> 25r85 33r33 337r36 341r41 357c9 10|57r33 93r85 94r20
 . 99r21 99r41 377r33 831r37 832r37 833r46 1353r36 1386r41
 25V13*Create_Window{23I9} 25>28 25>45 25>63 10|93b13 103l8 103t21
@@ -759,7 +759,7 @@ X 9 display-basic.ads
 303i71 Radius{integer}
 303r89 Color{8|27R9}
 304U14*Draw_Circle 304>27 304>47 304>67 304>83 10|424b14 451l8 451t19
-304i27 Canvas{31I9} 10|424b27 425r59 436r24 449r24
+304i27 Canvas{31I9} 10|424b27 425r53 436r24 449r24
 304r47 Position{40R9} 10|424b47 431r20 432r20 433r20
 304f67 Radius{float} 10|424b67 446r33 446r51
 304r83 Color{8|27R9} 10|424b83 435r18
@@ -865,13 +865,13 @@ X 9 display-basic.ads
 331i31 Canvas{31I9} 10|81b31 82r52 84r43 86r24
 331f51 ZF{float} 10|81b51 84r51
 333U14*Set_Center 333>26 333>46 10|760b14 764l8 764t18
-333i26 Canvas{31I9} 10|760b26 761r53 763r38
+333i26 Canvas{31I9} 10|760b26 761r52 763r38
 333r46 Position{40R9} 10|760b46 763r56 763r78
 334U14*Set_Center 334>26 334>46 10|766b14 769l8 769t18
-334i26 Canvas{31I9} 10|766b26 768r39
-334r46 Position{46R9} 10|766b46 768r47
+334i26 Canvas{31I9} 10|766b26 768r38
+334r46 Position{46R9} 10|766b46 768r46
 335V13*Get_Center{46R9} 335>25 10|771b13 774l8 774t18
-335i25 Canvas{31I9} 10|771b25 773r47
+335i25 Canvas{31I9} 10|771b25 773r45
 336V13*Get_Canvas_Size{46R9} 336>29 10|792b13 796l8 796t23
 336i29 Canvas{31I9} 10|792b29 793r53
 337U14*Swap_Buffers 337>27 337>47 10|1353b14 1382l8 1382t20
@@ -888,14 +888,14 @@ X 9 display-basic.ads
 348V13*To_Screen_Point{46R9} 348>30 348>51 10|784b13 790l8 790t23
 348i30 Canvas{31I9} 10|784b30 785r52
 348r51 P{40R9} 10|784b51 787r58 788r98
-350V12*Is_Killed{boolean} 10|807b13 810l8 810t17
+350V13*Is_Killed{boolean} 10|807b13 810l8 810t17
 356I9 Window_ID_Range<short_short_integer> 357r26
 359I9 Canvas_ID_Range<short_integer> 360r26
 X 10 display-basic.adb
 45b4 Initialized{boolean} 328r14 1404m7
 47R9 SDL_Window_Surface 54e14 57r47 63r27 90r89 147r27 181r26 323r89 324r11
 48i7*surface{9|31I9} 148r54 177r28 364m9
-49p7*window(38|115R9) 177r60 215r43 341m9 355r41 1359r33 1362r48
+49p7*window(38|115R9) 177r60 215r43 341m9 355r39 1359r33 1362r48
 50i7*w{integer} 154r36 155r28 155r51 351m9 831m54
 51i7*h{integer} 154r51 156r28 156r51 352m9 832m54
 52i7*bpp{17|35I9}
@@ -909,11 +909,11 @@ X 10 display-basic.adb
 64i31 Canvas{9|31I9} 133b31 134r53
 82r7 C{13|20R9}
 90V13 Create_SDL_Window{47R9} 90>32 90>49 90>67 100s37 323b13 372l8 372t25
-90i32 Width{integer} 323b32 343r51 351r14
-90i49 Height{integer} 323b49 344r52 352r14
+90i32 Width{integer} 323b32 343r53 351r14
+90i49 Height{integer} 323b49 344r53 352r14
 90a67 Name{string} 323b67 341r47
 94i7 Current_Id{9|23I9} 99m7 100r22 102r14
-132m4 Quadric{42|67M9} 262m8 411r23 446r15
+132m4 Quadric{42|67M9} 262m7 411r23 446r15
 134r7 C{13|20R9} 135r33 136r35
 135p7 S(36|76R9) 140r26 140r49 141r26 141r49
 136f7 Z{17|65F9} 140r37 140r60 141r37 141r60
@@ -932,8 +932,8 @@ X 10 display-basic.adb
 286a7 light_diffuse{283A12} 306m41 306r41
 290a7 light_ambient{283A12} 307m41 307r41
 294r7 IC{13|20R9} 302r30 302r50 303r29 303r49
-324r7 S{47R9} 341m7 351m7 352m7 355m39 355r39 364m7 366r22 370r14
-325p6 SDL_S(36|76R9) 355m9 357r10 364r41
+324r7 S{47R9} 341m7 351m7 352m7 355m37 355r37 364m7 366r22 370r14
+325p7 SDL_S(36|76R9) 355m7 357r10 364r41
 383U14 Set_Color 383b14 383>24 388l8 388t17 400s7 435s7 459s7 518s7 579s7
 . 626s7 645s7 740s7
 383r24 Color{8|27R9} 385r25 386r25 387r25
@@ -946,7 +946,7 @@ X 10 display-basic.adb
 422r47 Position{9|46R9}
 422i71 Radius{integer}
 422r89 Color{8|27R9}
-425r13 IC{13|20R9} 431r40 431r60 432r40 432r60
+425r7 IC{13|20R9} 431r40 431r60 432r40 432r60
 453U14 Draw_Circle
 453i27 Canvas{9|31I9}
 453r47 Position{9|46R9}
@@ -964,7 +964,7 @@ X 10 display-basic.adb
 483i7 w{integer} 526r69 527r69 538r36
 484i7 h{integer} 525r86 526r97 532r39
 520e11 C=520:16{character} 521r54
-558r7 IC{13|20R9} 576r27 577r24 591r53
+558r7 IC{13|20R9} 576r27 577r22 591r53
 559r7 Cursor{9|46R9} 585r51 585r68 586r51 586r68 587r51 587r79 588r51 588r79
 . 591r13 593m16 593r28 594m16 599m13 599r25
 560e7 Font{11|7E9} 561r33 562r33 591r35
@@ -977,12 +977,12 @@ X 10 display-basic.adb
 615f66 Width{float}
 615f73 Height{float}
 615r89 Color{8|27R9}
-618r7 C{13|20R9} 623r27 624r24
+618r7 C{13|20R9} 623r27 624r22
 641r7 IC{13|20R9} 648r40 648r60 649r40 649r60
 666A9 Texture_T(14|670F12)<integer> 668r48
 667K12 Texture_Pointers[19|44]
 671r7 IC{13|20R9} 690r40 690r60 691r40 691r60
-732r7 C{13|20R9} 737r27 738r24
+732r7 C{13|20R9} 737r27 738r22
 753U14 Set_Pixel
 753i25 Canvas{9|31I9}
 753r45 Position{9|46R9}
@@ -990,7 +990,7 @@ X 10 display-basic.adb
 758V13 Scale{integer} 758>20 758>47 763s47 763s69
 758r20 Canvas{13|20R9} 758r90
 758f47 L{float} 758r86
-761r8 C{13|20R9} 763r53 763r75
+761r7 C{13|20R9} 763r53 763r75
 777r7 C{13|20R9} 779r35 779r54 780r29 780r48
 785r7 C{13|20R9} 787r42 787r73 787r92 788r41 788r60 788r82
 793r7 IC{13|20R9} 795r36 795r59
@@ -1023,8 +1023,8 @@ X 10 display-basic.adb
 . 1308m13 1310m13 1312m13 1314m13 1316m13 1318m13 1320m13 1322m13 1324m13
 . 1326m13 1328m13 1330m13 1332m13 1334m13 1336m13 1338m13 1340m13 1342m13
 . 1344m13 1391r61
-805b5 Killed{boolean} 809r14 818m16
-812U16 Poll_Events 812b16 842l8 842t19 1378s7
+805b4 Killed{boolean} 809r14 818m16
+812U14 Poll_Events 812b14 842l8 842t19 1378s7
 813r7 E{25|763R9} 815m28 815r28 816r25 821r53 821r74 824r53 824r74 828r21
 . 831r67 832r67
 844U14 Update_Keyboard_Status 844b14 1351l8 1351t30 1380s7
@@ -1072,23 +1072,23 @@ X 12 display-basic-glfonts.ads
 3K23*GLFonts 10|42w20 42r47 12|8e26
 5V13*getCharTexture{14|668M12} 10|521s39 582s39
 X 13 display-basic-utils.ads
-7K23*Utils 10|36w20 36r45 84r21 763r21 768r22 773r30 13|42e24
-20R9*T_Internal_Canvas 10|82r11 134r11 148r11 294r12 391r12 425r18 480r12
-. 558r12 618r11 641r12 671r12 732r11 758r28 761r12 777r11 785r11 793r12 13|24e14
-21p7*Surface(36|76R9) 10|135r35 530r56 576r30 577r27 591r56 623r29 624r26
-. 737r29 738r26 779r37 780r31 787r75 788r43 795r39 795r62
+7K23*Utils 10|36w20 36r45 84r21 763r21 768r21 773r28 13|42e24
+20R9*T_Internal_Canvas 10|82r11 134r11 148r11 294r12 391r12 425r12 480r12
+. 558r12 618r11 641r12 671r12 732r11 758r28 761r11 777r11 785r11 793r12 13|24e14
+21p7*Surface(36|76R9) 10|135r35 530r56 576r30 577r25 591r56 623r29 624r24
+. 737r29 738r24 779r37 780r31 787r75 788r43 795r39 795r62
 22f7*Zoom_Factor{float} 10|78r43 136r37 302r53 303r52 396r63 397r63 431r63
 . 432r63 495r63 496r63 500r23 501r23 502r23 648r63 649r63 690r63 691r63 758r97
 . 787r44 788r84
 23r7*Center{9|46R9} 10|302r33 303r32 396r43 397r43 431r43 432r43 495r43 496r43
 . 648r43 649r43 690r43 691r43 779r56 780r50 787r94 788r62
 26U14*Set_Zoom_Factor 10|84s27
-27U14*Set_Center 10|763s27 768s28
-28V13*Get_Center{9|46R9} 10|773s36
+27U14*Set_Center 10|763s27 768s27
+28V13*Get_Center{9|46R9} 10|773s34
 31V13*Register_SDL_Surface{9|31I9} 10|364s20
 32U14*Update_SDL_Surface 10|177s7
 33V13*Get_Internal_Canvas{20R9} 10|78s15 82s32 134s32 148s32 294s33 391s33
-. 425s39 480s33 558s33 618s32 641s33 732s32 761s33 777s32 785s32 793s33
+. 425s33 480s33 558s33 618s32 641s33 732s32 761s32 777s32 785s32 793s33
 X 14 gl_gl_h.ads
 7K9*GL_gl_h 10|31w6 31r19 14|2337e12
 35N4*GL_DEPTH_BUFFER_BIT 10|1365r39
@@ -1103,7 +1103,7 @@ X 14 gl_gl_h.ads
 157N4*GL_LINE_SMOOTH 10|237r16 442r16
 169N4*GL_POLYGON_SMOOTH 10|443r16
 175N4*GL_LIGHTING 10|263r17 313r17 319r18
-182N4*GL_COLOR_MATERIAL 10|253r15
+182N4*GL_COLOR_MATERIAL 10|253r17
 191N4*GL_DEPTH_TEST 10|252r17 511r17 545r16 566r17 610r16
 222N4*GL_BLEND 10|514r16 544r17 569r16 609r17 686r16
 241N4*GL_POINT_SMOOTH_HINT 10|236r14 441r14
@@ -1118,7 +1118,7 @@ X 14 gl_gl_h.ads
 373N4*GL_DIFFUSE 10|266r29 306r29
 375N4*GL_POSITION 10|267r29 305r29
 408N4*GL_MODELVIEW 10|142r21 174r21 605r20 635r20 749r20
-409N4*GL_PROJECTION 10|138r21 151r21 573r20 620r21 734r20
+409N4*GL_PROJECTION 10|138r21 151r21 573r20 620r20 734r20
 424N4*GL_RGBA 10|678r38 678r84
 439N4*GL_SMOOTH 10|233r20 438r20
 473N4*GL_LINEAR 10|680r68 681r68
@@ -1142,7 +1142,7 @@ X 14 gl_gl_h.ads
 761U14*glColor3d 10|385s7
 834U14*glColor4d 10|676s7
 988U14*glDisable 10|319s7 320s7 511s7 543s7 544s7 566s7 608s7 609s7 716s7
-1027U14*glEnable 10|237s7 239s7 240s7 252s7 253s5 263s7 264s7 313s7 314s7
+1027U14*glEnable 10|237s7 239s7 240s7 252s7 253s7 263s7 264s7 313s7 314s7
 . 442s7 443s7 444s7 513s7 514s7 545s7 568s7 569s7 610s7 685s7 686s7
 1033U14*glEnd 10|407s10 468s7 528s10 589s10 661s7 713s7
 1092U14*glFlush 10|1358s7
@@ -1150,7 +1150,7 @@ X 14 gl_gl_h.ads
 1345U14*glLightfv 10|265s7 266s7 267s7 305s7 306s7 307s7
 1372U14*glLoadIdentity 10|139s7 143s7 152s7 175s7 575s7 606s7 622s7 636s7
 . 736s7 750s7
-1485U14*glMatrixMode 10|138s7 142s7 151s7 174s7 573s7 605s7 620s8 635s7 734s7
+1485U14*glMatrixMode 10|138s7 142s7 151s7 174s7 573s7 605s7 620s7 635s7 734s7
 . 749s7
 1548U14*glOrtho 10|140s7 155s7 576s7 623s7 737s7
 1611U14*glPopMatrix 10|308s7 417s7 450s7 470s7 553s7 604s7 634s7 663s7 718s7
@@ -1175,7 +1175,7 @@ X 14 gl_gl_h.ads
 2224U14*glViewport 10|154s7
 X 15 gl_glu_h.ads
 8K9*GL_glu_h 10|32w6 32r20 15|506e13
-258V13*gluNewQuadric{42|67M9} 10|262s19
+258V13*gluNewQuadric{42|67M9} 10|262s18
 285U14*gluDisk 10|446s7
 303U14*gluSphere 10|410s10
 304m7 qobj{42|67M9} 10|411r13
@@ -1183,19 +1183,19 @@ X 15 gl_glu_h.ads
 306i7 slices{14|660I12} 10|413r13
 307i7 stacks{14|660I12} 10|414r13
 X 16 interfac.ads
-38K9*Interfaces 10|24r6 24r24 26r6 26r32 27r6 52r16 343r34 344r35 668r6 847r26
+38K9*Interfaces 10|24r6 24r24 26r6 26r32 27r6 52r16 343r36 344r36 668r6 847r26
 . 16|184e15
 X 17 i-c.ads
-18K20*C 10|24w17 24r35 26r17 26r43 27r17 52r27 343r45 344r46 668r17 847r37
+18K20*C 10|24w17 24r35 26r17 26r43 27r17 52r27 343r47 344r47 668r17 847r37
 . 17|230e17
-35I9*int<integer> 10|52r29 343r47 344r48 628r15 629r15 630r15 631r15 742r15
+35I9*int<integer> 10|52r29 343r49 344r49 628r15 629r15 630r15 631r15 742r15
 . 743r15 744r15 745r15 852r29
 43M9*unsigned 10|816r15
 47M9*unsigned_char
 65F9*double<long_float> 10|136r11 136r27 149r11 385r18 386r18 387r18 412r23
-. 465r18 465r33 465r48 466r18 466r33 466r48 576r20 577r17 623r20 624r17 651r18
+. 465r18 465r33 465r48 466r18 466r33 466r48 576r20 577r15 623r20 624r15 651r18
 . 656r20 656r43 657r19 657r42 658r19 658r43 659r20 659r44 693r18 694r17 694r33
-. 737r20 738r17
+. 737r20 738r15
 X 19 i-cpoint.ads
 40+9 Element
 42*4 Default_Terminator{40+9} 10|850r49
@@ -1490,30 +1490,30 @@ X 35 sdl_stdinc_h.ads
 169I12*Sint32{41|113I12}
 X 36 sdl_surface_h.ads
 12K9*SDL_surface_h 10|21w6 21r25 23w6 23r25 36|667e18
-76R9*SDL_Surface 10|135r18 325r21 36|89e14
+76R9*SDL_Surface 10|135r18 325r22 36|89e14
 79i7*w{17|35I9} 10|140r28 140r51 530r64 576r38 591r64 623r37 737r37 779r45
 . 787r83 795r47
-80i7*h{17|35I9} 10|141r28 141r51 577r35 624r34 738r34 780r39 788r51 795r70
+80i7*h{17|35I9} 10|141r28 141r51 577r33 624r32 738r32 780r39 788r51 795r70
 X 38 sdl_video_h.ads
 11K9*SDL_video_h 10|22w6 22r23 38|1520e16
-32N4*SDL_WINDOWPOS_CENTERED 10|341r54 342r34
+32N4*SDL_WINDOWPOS_CENTERED 10|341r54 342r36
 115R9*SDL_Window 10|49r23
 149m4*SDL_WINDOW_OPENGL{17|43M9} 10|345r36
 150m4*SDL_WINDOW_SHOWN{17|43M9} 10|346r38
-153m4*SDL_WINDOW_RESIZABLE{17|43M9} 10|347r35
+153m4*SDL_WINDOW_RESIZABLE{17|43M9} 10|347r40
 208E9*SDL_WindowEventID 10|829r24 830r24 38|225e32
 214n7*SDL_WINDOWEVENT_RESIZED{208E9} 10|829r46
 215n7*SDL_WINDOWEVENT_SIZE_CHANGED{208E9} 10|830r46
 256M9*SDL_GLContext<42|67M9> 10|182r19
 268n7*SDL_GL_DOUBLEBUFFER{262E9} 10|194r30
-269n7*SDL_GL_DEPTH_SIZE{262E9} 10|197r31
+269n7*SDL_GL_DEPTH_SIZE{262E9} 10|197r30
 276n7*SDL_GL_MULTISAMPLEBUFFERS{262E9} 10|207r30
 277n7*SDL_GL_MULTISAMPLESAMPLES{262E9} 10|210r30
 280n7*SDL_GL_CONTEXT_MAJOR_VERSION{262E9} 10|334r30
 281n7*SDL_GL_CONTEXT_MINOR_VERSION{262E9} 10|338r30
 618V13*SDL_CreateWindow(115R9) 10|341s19
-1022V13*SDL_GetWindowSurface 10|177s37 355s18
-1399V13*SDL_GL_SetAttribute{17|35I9} 10|194s10 197s11 207s10 210s10 334s10
+1022V13*SDL_GetWindowSurface 10|177s37 355s16
+1399V13*SDL_GL_SetAttribute{17|35I9} 10|194s10 197s10 207s10 210s10 334s10
 . 338s10
 1419V13*SDL_GL_CreateContext{256M9} 10|215s20
 1504U14*SDL_GL_SwapWindow 10|1362s7

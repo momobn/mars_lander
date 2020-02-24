@@ -11,7 +11,6 @@ package body Mars_Lander is
    propulsed_time : Integer := 0;   
    
    Is_Drawn : Boolean := False;
-   Is_Put : Boolean := False;
    inv : constant Point_3d := (0.0, -1.0, 0.0);
    
    subtype Sprite_Id is Natural range 1..3;
@@ -20,7 +19,7 @@ package body Mars_Lander is
       
       -- Step procedure, update the lander parameters, react according to 
       -- pressed key
-      entry Step (lander: in out Lander_Type; key: Key_T) when Is_Put is
+      entry Step (lander : in out Lander_Type; key : Key_T) when Is_Put or else AI_Controlled is
          -- time interval
          delta_t : constant Point_3d := (40.0 / 1000.0, 40.0 / 1000.0, 0.0);
          tmp_pos_1 : constant Point_3d := ((-20.0), (-22.0), 0.0);
@@ -30,7 +29,7 @@ package body Mars_Lander is
          
          surface_start : Point_3d;
          surface_offset : constant Point_3d := 
-           (Float(Surface_Width) * Float(Game_Window_Width) / Float(Size), 0.0, 0.0);
+           (60.0, 0.0, 0.0);
          surface_end : Point_3d;
          Mars_Terrain : Terrain_Type;
          terrain_index : Natural;
@@ -54,7 +53,7 @@ package body Mars_Lander is
                           E2 => surface_end);
          -- crush test
          terrain_index := 
-              50 + Integer(lander.Position.X / ((Float(Game_Window_Width) / Float(Size))));
+           50 + Integer(lander.Position.X / ((Float(Game_Window_Width) / Float(Size))));
          
          if terrain_index >= Size then
             lander.crushed := True;
@@ -76,8 +75,8 @@ package body Mars_Lander is
             lander.Gravity := (0.0, 0.0, 0.0);
             
             -- crush test
-            if (lander.Speed.Y > 20.0 and then lander.Speed.X > 20.0) 
-              or else (lander.Direction > 10.0 or else lander.Direction < -10.0) then
+            if (lander.Speed.Y > 18.0 and then lander.Speed.X > 18.0) 
+              or else (lander.Direction > 5.0 or else lander.Direction < -5.0) then
                lander.crushed := True;
             end if;
          end if;
@@ -90,68 +89,79 @@ package body Mars_Lander is
             lander.Gravity := (0.0, 0.0, 0.0);
          end if;
          
-         case key is
-         when SDLK_LEFT => 
-            if lander.Direction >= 180.0 then
-               lander.Direction := 180.0;
-            elsif lander.Direction <= -180.0 then
-               lander.Direction := -180.0;
-            end if;
-            lander.Direction := lander.Direction + 0.5;
+         if lander.stopped = False and then lander.crushed = False then
+            case key is
+            when SDLK_LEFT => 
+               if lander.Direction >= 180.0 then
+                  lander.Direction := 180.0;
+               elsif lander.Direction <= -180.0 then
+                  lander.Direction := -180.0;
+               end if;
+               lander.Direction := lander.Direction + 0.5;
          
-         when SDLK_RIGHT =>
-            lander.Direction := lander.Direction - 0.5;
+            when SDLK_RIGHT =>
+               if lander.Direction >= 180.0 then
+                  lander.Direction := 180.0;
+               elsif lander.Direction <= -180.0 then
+                  lander.Direction := -180.0;
+               end if;
+               lander.Direction := lander.Direction - 0.5;
          
-         when SDLK_UP => 
-            if lander.Acceleration.Y > 0.0 then 
-               lander.Acceleration.Y := lander.Acceleration.Y + 0.1;
-            else
-               lander.Acceleration.Y := lander.Acceleration.Y + 2.0;
-            end if;
-             if lander.Acceleration.X > 0.0 then 
-               lander.Acceleration.X := lander.Acceleration.X + 0.15;
-            else
-               lander.Acceleration.X := lander.Acceleration.X + 2.0;
-            end if;
+            when SDLK_UP => 
+               if lander.Acceleration.Y > 0.0 then 
+                  lander.Acceleration.Y := lander.Acceleration.Y + 0.05;
+               else
+                  lander.Acceleration.Y := lander.Acceleration.Y + 1.0;
+               end if;
+               if lander.Acceleration.X > 0.0 then 
+                  lander.Acceleration.X := lander.Acceleration.X + 0.15;
+               else
+                  lander.Acceleration.X := lander.Acceleration.X + 1.0;
+               end if;
          
-         when SDLK_DOWN =>
-            if lander.Acceleration.Y > 0.0 then 
-               lander.Acceleration.Y := lander.Acceleration.Y * 0.2;
-            else
-               lander.Acceleration.Y := lander.Acceleration.Y - 0.2;
-            end if; 
-            if lander.Acceleration.X > 0.0 then 
-               lander.Acceleration.X := lander.Acceleration.X * 0.2;
-            else
-               lander.Acceleration.X := lander.Acceleration.X - 0.2;
-            end if;
+            when SDLK_DOWN =>
+               if lander.Acceleration.Y > 0.0 then 
+                  lander.Acceleration.Y := lander.Acceleration.Y * 0.2;
+               else
+                  lander.Acceleration.Y := lander.Acceleration.Y - 0.2;
+               end if; 
+               if lander.Acceleration.X > 0.0 then 
+                  lander.Acceleration.X := lander.Acceleration.X * 0.2;
+               else
+                  lander.Acceleration.X := lander.Acceleration.X - 0.2;
+               end if;
             
-         when SDLK_UNKNOWN =>
-            lander.Acceleration := (0.0, 0.0, 0.0);
-         when others =>
-            null;
-         end case;
+            when SDLK_UNKNOWN =>
+               lander.Acceleration := (0.0, 0.0, 0.0);
+            when others =>
+               null;
+            end case;
       
-         lander.Speed := lander.Speed + (lander.Acceleration + lander.Gravity) * delta_t;
+            lander.Speed := lander.Speed + (lander.Acceleration + lander.Gravity) * delta_t;
          
-         if lander.Speed.Y < 0.0 and then (lander.Direction > 90.0 or else lander.Direction < -90.0 ) then
-            lander.Position := lander.Position + From_Angle(Angle => lander.Direction) * lander.Speed * inv * delta_t;
-         else
-            lander.Position := lander.Position + From_Angle(Angle => lander.Direction) * lander.Speed * delta_t;
+            if lander.Speed.Y < 0.0 and then (lander.Direction > 90.0 or else lander.Direction < -90.0 ) then
+               lander.Position := lander.Position + From_Angle(Angle => lander.Direction) * lander.Speed * inv * delta_t;
+            else
+               lander.Position := lander.Position + From_Angle(Angle => lander.Direction) * lander.Speed * delta_t;
+            end if;
+         
+            if lander.Acceleration.Y > 0.0 then
+               propulsed_time := propulsed_time + 1;
+            else
+               propulsed_time := 0;
+            end if;
+         
+            Buffer_Pos := lander.Position;
+            Buffer_Acc := lander.Acceleration;
+            Buffer_Dir := lander.Direction;
+         
+            --Put_Line("pos: ( " & lander.Position.X'Image & ", " & lander.Position.Y'Image & " )");
+            --Put_Line("dir: ( " & lander.Direction'Image & " )");
+            Put_Line("speed: ( " & lander.Speed.X'Image & ", " & lander.Speed.Y'Image & " )");
+            --Put_Line("acceleration: ( " & lander.Acceleration.X'Image & ", " & lander.Acceleration.Y'Image & " )");
+            --Put_Line("stopped: ( " & lander.stopped'Image & " ), crushed: ( " & lander.crushed'Image & " )");
+            --Put_Line("propulsed_time: ( " & propulsed_time'Image & " )");
          end if;
-         
-         if lander.Acceleration.Y > 0.0 then
-            propulsed_time := propulsed_time + 1;
-         else
-            propulsed_time := 0;
-         end if;
-         
-         --Put_Line("pos: ( " & lander.Position.X'Image & ", " & lander.Position.Y'Image & " )");
-         --Put_Line("dir: ( " & lander.Direction'Image & " )");
-         --Put_Line("speed: ( " & lander.Speed.X'Image & ", " & lander.Speed.Y'Image & " )");
-         --Put_Line("acceleration: ( " & lander.Acceleration.X'Image & ", " & lander.Acceleration.Y'Image & " )");
-         --Put_Line("stopped: ( " & lander.stopped'Image & " ), crushed: ( " & lander.crushed'Image & " )");
-         --Put_Line("propulsed_time: ( " & propulsed_time'Image & " )");
          
          Is_Put := False;
          
@@ -175,18 +185,9 @@ package body Mars_Lander is
    
       -- Draw procedure, draw lander, background and display message on screen
       procedure Draw (lander: in out Lander_Type; canvas: Canvas_ID) is
-         
-         -- background poition
-         bg_pos : constant Point_3d := (0.0, 0.0, -2.0);
    
          -- text position
          txt_pos : Screen_Point;
-         
-         -- info pos
-         info_pos : constant Screen_Point := (80, 550);
-         
-         -- info speed
-         info_speed : constant Screen_Point := (80, 570);
          
          -- load the lander image in bmp form
          lander_image : Image_T := null;
@@ -209,35 +210,17 @@ package body Mars_Lander is
                     Height   => 44.0,
                     Rotation => lander.Direction,
                     Image    => lander_image);
-      
-         Draw_Image(Canvas   => canvas,
-                    Position => bg_pos,
-                    Width    => 1024.0,
-                    Height   => 1024.0,
-                    Rotation => 0.0,
-                    Image    => Load_BMP("sky.bmp"));
-         
-         Draw_Text(Canvas   => canvas,
-                   Position => info_pos,
-                   Text     => "pos:" & lander.Position.X'Image & ", " & lander.Position.Y'Image,
-                   Color    => White);
-         
-         Draw_Text(Canvas   => canvas,
-                   Position => info_speed,
-                   Text     => "speed:" & lander.Speed.X'Image & ", " & lander.Speed.Y'Image,
-                   Color    => White);
-         
          
          if lander.stopped and then lander.crushed = False then
-            txt_pos.X := 400 - Get_Text_Size(Text => "Successfully landed!").X / 2;
-            txt_pos.Y := 400;
+            txt_pos.X := 500 - Get_Text_Size(Text => "Successfully landed!").X / 2;
+            txt_pos.Y := 300;
             Draw_Text(Canvas   => canvas,
                       Position => txt_pos,
                       Text     => "YEAH!!! Successfully landed!",
                       Color    => Green);
          elsif lander.stopped and then lander.crushed then
-            txt_pos.X := 400 - Get_Text_Size(Text => "Lander crushed!").X / 2;
-            txt_pos.Y := 400;
+            txt_pos.X := 500 - Get_Text_Size(Text => "Lander crushed!").X / 2;
+            txt_pos.Y := 300;
             Draw_Text(Canvas   => canvas,
                       Position => txt_pos,
                       Text     => "OOOOOOPS!!! Lander crushed!",
@@ -265,15 +248,43 @@ package body Mars_Lander is
          if Get_Key_Status(Key => SDLK_DOWN) then
             pressed_key := SDLK_DOWN;
          end if;
+         
+         if Get_Key_Status(Key => SDLK_A) then
+            Is_Put := False;
+            AI_Controlled := True;
+         end if;
+             
          Is_Drawn := False;
          Is_Put := True;
+         
       end User_Input;
+      
+      function Get_Is_Put return Boolean is
+      begin
+         return protected_lander.Is_Put;
+      end Get_Is_Put;
+   
+      function Get_AI_Controlled return Boolean is
+      begin
+         return protected_lander.AI_Controlled;
+      end Get_AI_Controlled;
+   
+      procedure Set_Is_Put (Is_Put : Boolean) is
+      begin
+         protected_lander.Is_Put := Is_Put;
+      end Set_Is_Put;
+   
+      procedure Set_AI_Controlled (AI_Controlled : Boolean) is
+      begin
+         protected_lander.AI_Controlled := AI_Controlled;
+      end Set_AI_Controlled;
    
    end protected_lander;
    
-   procedure Init (lander: in out Lander_Type; speed_x: Float; speed_y: Float) is
-      begin
-         lander.Speed := (speed_x, speed_y, 0.0);
+   procedure Init (lander : in out Lander_Type; speed_x : Float; speed_y : Float) is
+   begin
+      lander.Speed := (speed_x, speed_y, 0.0);
    end Init;
+   
    
 end Mars_Lander;
