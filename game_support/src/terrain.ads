@@ -3,7 +3,7 @@ with Display.Basic; use Display.Basic;
 package Terrain is
 
    Size : constant Natural := 100;
-   Surface_Width : constant Natural := 9; -- the width of landing surface
+   Surface_Width : constant Natural := 6; -- the width of landing surface
    Surface_Index : Natural; -- index for which the surface begins
    Game_Window_Width: Natural;
    type Terrain_Type is array (1 .. Size) of Point_3d;

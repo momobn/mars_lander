@@ -14,7 +14,7 @@ display-basic.adb:311:31: warning: formal parameter "Canvas" is not referenced
 display-basic.adb:317:32: warning: formal parameter "Canvas" is not referenced
 display-basic.adb:377:24: warning: formal parameter "Window" is not referenced
 display-basic.adb:391:07: warning: "IC" is not modified, could be declared constant
-display-basic.adb:425:13: warning: "IC" is not modified, could be declared constant
+display-basic.adb:425:07: warning: "IC" is not modified, could be declared constant
 display-basic.adb:455:25: warning: formal parameter "Canvas" is not referenced
 display-basic.adb:477:95: warning: formal parameter "Bg_Color" is not referenced
 display-basic.adb:480:07: warning: "IC" is not modified, could be declared constant
@@ -31,7 +31,7 @@ display-basic.adb:641:07: warning: "IC" is not modified, could be declared const
 display-basic.adb:667:12: warning: package "Texture_Pointers" is not referenced
 display-basic.adb:670:26: warning: formal parameter "Canvas" is not referenced
 display-basic.adb:732:07: warning: "C" is not modified, could be declared constant
-display-basic.adb:761:08: warning: "C" is not modified, could be declared constant
+display-basic.adb:761:07: warning: "C" is not modified, could be declared constant
 display-basic.adb:777:07: warning: "C" is not modified, could be declared constant
 display-basic.adb:785:07: warning: "C" is not modified, could be declared constant
 display-basic.adb:793:07: warning: "IC" is not modified, could be declared constant
