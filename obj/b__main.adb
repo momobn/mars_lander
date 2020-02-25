@@ -40,7 +40,7 @@ package body ada_main is
    E210 : Short_Integer; pragma Import (Ada, E210, "system__tasking__protected_objects_E");
    E216 : Short_Integer; pragma Import (Ada, E216, "system__tasking__protected_objects__entries_E");
    E228 : Short_Integer; pragma Import (Ada, E228, "system__tasking__queuing_E");
-   E248 : Short_Integer; pragma Import (Ada, E248, "system__tasking__stages_E");
+   E250 : Short_Integer; pragma Import (Ada, E250, "system__tasking__stages_E");
    E236 : Short_Integer; pragma Import (Ada, E236, "perlin_E");
    E163 : Short_Integer; pragma Import (Ada, E163, "display_E");
    E175 : Short_Integer; pragma Import (Ada, E175, "display__image_E");
@@ -299,7 +299,7 @@ package body ada_main is
       System.Tasking.Queuing'Elab_Body;
       E228 := E228 + 1;
       System.Tasking.Stages'Elab_Body;
-      E248 := E248 + 1;
+      E250 := E250 + 1;
       E236 := E236 + 1;
       Display'Elab_Spec;
       E163 := E163 + 1;

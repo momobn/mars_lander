@@ -17,10 +17,12 @@ package Mars_Lander is
       function Get_AI_Controlled return Boolean;
       procedure Set_Is_Put (Is_Put : Boolean);
       procedure Set_AI_Controlled (AI_Controlled : Boolean);
+      procedure Enter_Manual_Mode (Manual_Mode_Entered : out Boolean);
       
    private
       Is_Put : Boolean := False;
       AI_Controlled : Boolean := False;
+      Manual_Mode : Boolean := False;
       
    end protected_lander;
    procedure Init (lander: in out Lander_Type; speed_x: Float; speed_y: Float);

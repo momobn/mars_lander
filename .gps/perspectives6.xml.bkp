@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <GPS >
-  <perspectives state=" 4" mdi_height=" 686" mdi_width=" 1366" height=" 702" width=" 915"  >
+  <perspectives state=" 0" mdi_height=" 638" mdi_width=" 1068" height=" 697" width=" 1068"  >
     <perspective name="Default">
       <Pane width=" 1.00000E+02%" Orientation="ORIENTATION_HORIZONTAL" >
-        <Pane width=" 2.67305E+01%" Orientation="ORIENTATION_VERTICAL" >
-          <Notebook height=" 5.02950E+01%" Tabs="POS_LEFT" >
+        <Pane width=" 2.67925E+01%" Orientation="ORIENTATION_VERTICAL" >
+          <Notebook height=" 5.03175E+01%" Tabs="POS_LEFT" >
             <Child Raised="True" Group=" 106" State="NORMAL" >
               <Project_Explorer_Project />
             </Child>
@@ -12,7 +12,7 @@
               <Scenario_View />
             </Child>
           </Notebook>
-          <Notebook height=" 5.02950E+01%" Tabs="POS_LEFT" >
+          <Notebook height=" 5.03175E+01%" Tabs="POS_LEFT" >
             <Child Group=" 106" State="NORMAL" >
               <Learn_View />
             </Child>
@@ -30,9 +30,9 @@
             </Child>
           </Notebook>
         </Pane>
-        <Pane width=" 7.35641E+01%" Orientation="ORIENTATION_VERTICAL" >
-          <central height=" 5.70796E+01%"  />
-          <Notebook height=" 4.35103E+01%" Tabs="POS_TOP" >
+        <Pane width=" 7.35849E+01%" Orientation="ORIENTATION_VERTICAL" >
+          <central height=" 5.71429E+01%"  />
+          <Notebook height=" 4.34921E+01%" Tabs="POS_TOP" >
             <Child Group=" 107" State="NORMAL" >
               <Location_View_Record />
             </Child>
@@ -190,34 +190,34 @@
     <desktop perspective="Default" >
       <vfs_project>E:\eidd-3A\temps reels\mars_lander_lab\mars_lander.gpr</vfs_project>
       <Learn_View>
-        <learn position=" 4.98382E+01%"  />
+        <learn position=" 4.98246E+01%"  />
       </Learn_View>
       <Pane width=" 1.00000E+02%" Orientation="ORIENTATION_HORIZONTAL" >
-        <Notebook width=" 1.00402E+02%" Tabs="POS_TOP" >
+        <Notebook width=" 1.00515E+02%" Tabs="POS_TOP" >
           <Child Group=" 1" State="NORMAL" >
             <Source_Editor>
               <project>E:\eidd-3A\temps reels\mars_lander_lab\game_support\game_support.gpr</project>
-              <Column_End>85</Column_End>
-              <Column>85</Column>
-              <Line>122</Line>
+              <Column_End>54</Column_End>
+              <Column>54</Column>
+              <Line>96</Line>
               <vfs_File>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\controller.adb</vfs_File>
             </Source_Editor>
           </Child>
           <Child Group=" 1" State="NORMAL" >
             <Source_Editor>
               <project>E:\eidd-3A\temps reels\mars_lander_lab\game_support\game_support.gpr</project>
-              <Column_End>35</Column_End>
-              <Column>35</Column>
-              <Line>30</Line>
+              <Column_End>45</Column_End>
+              <Column>45</Column>
+              <Line>282</Line>
               <vfs_File>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\mars_lander.adb</vfs_File>
             </Source_Editor>
           </Child>
-          <Child Group=" 1" State="NORMAL" >
+          <Child Raised="True" Focus="True" Group=" 1" State="NORMAL" >
             <Source_Editor>
               <project>E:\eidd-3A\temps reels\mars_lander_lab\game_support\game_support.gpr</project>
-              <Column_End>23</Column_End>
-              <Column>23</Column>
-              <Line>37</Line>
+              <Column_End>10</Column_End>
+              <Column>10</Column>
+              <Line>34</Line>
               <vfs_File>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\terrain.adb</vfs_File>
             </Source_Editor>
           </Child>
@@ -230,13 +230,31 @@
               <vfs_File>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\terrain.ads</vfs_File>
             </Source_Editor>
           </Child>
-          <Child Raised="True" Focus="True" Group=" 1" State="NORMAL" >
+          <Child Group=" 1" State="NORMAL" >
             <Source_Editor>
               <project>E:\eidd-3A\temps reels\mars_lander_lab\game_support\game_support.gpr</project>
-              <Column_End>34</Column_End>
-              <Column>34</Column>
+              <Column_End>1</Column_End>
+              <Column>1</Column>
               <Line>3</Line>
               <vfs_File>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\vector.adb</vfs_File>
+            </Source_Editor>
+          </Child>
+          <Child Group=" 1" State="NORMAL" >
+            <Source_Editor>
+              <project>E:\eidd-3A\temps reels\mars_lander_lab\game_support\game_support.gpr</project>
+              <Column_End>7</Column_End>
+              <Column>7</Column>
+              <Line>20</Line>
+              <vfs_File>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\mars_lander.ads</vfs_File>
+            </Source_Editor>
+          </Child>
+          <Child Group=" 1" State="NORMAL" >
+            <Source_Editor>
+              <project>E:\eidd-3A\temps reels\mars_lander_lab\game_support\game_support.gpr</project>
+              <Column_End>46</Column_End>
+              <Column>46</Column>
+              <Line>8</Line>
+              <vfs_File>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\background.adb</vfs_File>
             </Source_Editor>
           </Child>
         </Notebook>
