@@ -11,6 +11,7 @@ package body Mars_Lander is
    propulsed_time : Integer := 0;   
    
    Is_Drawn : Boolean := False;
+   Manual_Mode_Counter : Natural := 0;
    inv : constant Point_3d := (0.0, -1.0, 0.0);
    
    subtype Sprite_Id is Natural range 1..3;
@@ -248,11 +249,6 @@ package body Mars_Lander is
          if Get_Key_Status(Key => SDLK_DOWN) then
             pressed_key := SDLK_DOWN;
          end if;
-         
-         if Get_Key_Status(Key => SDLK_A) then
-            Is_Put := False;
-            AI_Controlled := True;
-         end if;
              
          Is_Drawn := False;
          Is_Put := True;
@@ -278,7 +274,18 @@ package body Mars_Lander is
       begin
          protected_lander.AI_Controlled := AI_Controlled;
       end Set_AI_Controlled;
-   
+      
+      procedure Enter_Manual_Mode (Manual_Mode_Entered : out Boolean) is
+      begin
+         if Manual_Mode_Counter = 0 then
+            protected_lander.Manual_Mode := Get_Key_Status(Key => SDLK_M);
+            if protected_lander.Manual_Mode then
+               Manual_Mode_Counter := 1;
+            end if;
+         end if;
+         Manual_Mode_Entered := protected_lander.Manual_Mode;
+      end Enter_Manual_Mode;
+      
    end protected_lander;
    
    procedure Init (lander : in out Lander_Type; speed_x : Float; speed_y : Float) is

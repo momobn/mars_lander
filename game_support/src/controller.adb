@@ -19,8 +19,6 @@ package body Controller is
       -- defining the loop period
       Period : constant Time_Span := Milliseconds (10);
       
-      User_has_input : Boolean := False;
-      
       surface_start : Point_3d;
       surface_offset : constant Point_3d := 
         (60.0, 0.0, 0.0);
@@ -29,6 +27,7 @@ package body Controller is
       
       difference : Float;
       
+      Manual_Mode_Entered : Boolean;
       -- our Mars Lander
       Mars_Lander : Lander_Type;
 
@@ -88,8 +87,17 @@ package body Controller is
                                   canvas => Canvas);
 
             -- define the pressed key
-            User_has_input := protected_lander.Get_Is_Put;
-            if User_has_input then 
+            
+            protected_lander.Enter_Manual_Mode(Manual_Mode_Entered);
+            
+            
+            Put_Line("AI controlled: " & protected_lander.Get_AI_Controlled'Image);
+            Put_Line("Is Put: " & protected_lander.Get_Is_Put'Image);
+            Put_Line("Manual: " & Manual_Mode_Entered'Image);
+            
+            if Manual_Mode_Entered then
+               protected_lander.Set_AI_Controlled(False);
+               protected_lander.Set_Is_Put(True);
                protected_lander.User_Input(pressed_key => Key);
             end if;
       
@@ -103,50 +111,50 @@ package body Controller is
                    + (surface_start.Y - Buffer_Pos.Y) ** 2);
             Put_Line("Difference between:" & difference'Image);
                
-            
-            if counter mod 2 /= 0 then
+            if protected_lander.Get_AI_Controlled then
+               if counter mod 2 /= 0 then
                
-               if surface_end.X <= (Buffer_Pos.X + 20.0)
-                 or else surface_end.X <= (Buffer_Pos.X - 20.0)
-               then
-                  Key := SDLK_LEFT;
-               end if;
-            
-               if surface_start.X >= (Buffer_Pos.X - 20.0)
-                 or else surface_start.X >= (Buffer_Pos.X + 20.0)
-               then
-                  Key := SDLK_RIGHT;
-               end if;
-            
-               --if surface_start.X <= (Buffer_Pos.X - 20.0)
-               --  and then surface_end.X >= (Buffer_Pos.X + 20.0)
-               if difference > 0.0 then
-                  buf_div := Buffer_Pos.Y / difference;
-                  if buf_div >= -1.0 and then buf_div <= 1.0 then
-                     Put_Line("Arccos(buf_div): " & Arccos(buf_div)'Image);
-                     if Buffer_Dir <= -5.0 
-                       and then (Arccos(buf_div) < 2.0 and then Arccos(buf_div) > 0.5) then
-                        Key := SDLK_LEFT;
-                     elsif Buffer_Dir >= 5.0 
-                       and then(Arccos(buf_div) > -2.0 and then Arccos(buf_div) < -0.5) then
-                        Key := SDLK_RIGHT;
-                     end if;          
-                     
+                  if surface_end.X <= (Buffer_Pos.X + 20.0)
+                    or else surface_end.X <= (Buffer_Pos.X - 20.0)
+                  then
+                     Key := SDLK_LEFT;
                   end if;
-               end if;
+            
+                  if surface_start.X >= (Buffer_Pos.X - 20.0)
+                    or else surface_start.X >= (Buffer_Pos.X + 20.0)
+                  then
+                     Key := SDLK_RIGHT;
+                  end if;
+            
+                  --if surface_start.X <= (Buffer_Pos.X - 20.0)
+                  --  and then surface_end.X >= (Buffer_Pos.X + 20.0)
+                  if difference > 0.0 then
+                     buf_div := Buffer_Pos.Y / difference;
+                     if buf_div >= -1.0 and then buf_div <= 1.0 then
+                        Put_Line("Arccos(buf_div): " & Arccos(buf_div)'Image);
+                        if Buffer_Dir <= -5.0 
+                          and then (Arccos(buf_div) < 2.0 and then Arccos(buf_div) > 0.5) then
+                           Key := SDLK_LEFT;
+                        elsif Buffer_Dir >= 5.0 
+                          and then(Arccos(buf_div) > -2.0 and then Arccos(buf_div) < -0.5) then
+                           Key := SDLK_RIGHT;
+                        end if;          
+                     
+                     end if;
+                  end if;
                
-            else
+               else
             
-               if difference > 45.0 and then Buffer_Acc.Y < 3.0 then
-                  Key := SDLK_UP;
-               elsif difference < 45.0 and then Buffer_Acc.Y > 2.0 then
-                  Key := SDLK_DOWN;
-               else 
-                  Key := SDLK_UNKNOWN;
-               end if;
+                  if difference > 45.0 and then Buffer_Acc.Y < 3.0 then
+                     Key := SDLK_UP;
+                  elsif difference < 45.0 and then Buffer_Acc.Y > 2.0 then
+                     Key := SDLK_DOWN;
+                  else 
+                     Key := SDLK_UNKNOWN;
+                  end if;
               
+               end if;
             end if;
-            
             
             Put_Line(Key'Image);
             -- change lander parameters

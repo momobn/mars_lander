@@ -10,7 +10,7 @@ RN
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U main%b		main.adb		44bcb50a NE OO SU
+U main%b		main.adb		6b1b3279 NE OO SU
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W controller%s		controller.adb		controller.ali
@@ -37,7 +37,7 @@ D i-c.ads		20190518041256 5421119b interfaces.c%s
 D i-cexten.ads		20190518041256 38d7e116 interfaces.c.extensions%s
 D i-cstrin.ads		20190518041256 341d0ddf interfaces.c.strings%s
 D main.adb		20200223183956 b469403e main%b
-D mars_lander.ads	20200224150150 8c8a268b mars_lander%s
+D mars_lander.ads	20200225093108 a32da1f8 mars_lander%s
 D sdl_blendmode_h.ads	20200121120806 e308a3b6 sdl_blendmode_h%s
 D sdl_pixels_h.ads	20200121120806 89492fa8 sdl_pixels_h%s
 D sdl_rect_h.ads	20200121120806 5db03fa9 sdl_rect_h%s
@@ -90,7 +90,7 @@ X 10 display-basic.ads
 X 15 main.adb
 10U11*Main 10b11 15l5 15t9
 X 16 mars_lander.ads
-4K9*Mars_Lander 15|5w6 5r25 16|40e16
+4K9*Mars_Lander 15|5w6 5r25 16|42e16
 X 36 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22

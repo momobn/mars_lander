@@ -1,5 +1,5 @@
-mars_lander.adb:44:24: warning: potentially blocking operation in protected operation
-mars_lander.adb:171:10: warning: "lower_bound" is not modified, could be declared constant
-mars_lander.adb:172:10: warning: "upper_bound" is not modified, could be declared constant
-mars_lander.adb:173:10: warning: "lander_img" is not modified, could be declared constant
-mars_lander.adb:195:10: warning: "lander_spritemap" is not modified, could be declared constant
+mars_lander.adb:45:24: warning: potentially blocking operation in protected operation
+mars_lander.adb:172:10: warning: "lower_bound" is not modified, could be declared constant
+mars_lander.adb:173:10: warning: "upper_bound" is not modified, could be declared constant
+mars_lander.adb:174:10: warning: "lander_img" is not modified, could be declared constant
+mars_lander.adb:196:10: warning: "lander_spritemap" is not modified, could be declared constant
