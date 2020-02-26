@@ -46,7 +46,13 @@ package body Controller is
       
       counter : Natural:= 0;
       
-      buf_div : Float;
+      lander_speed : Point_3d;
+      lander_direction : Float;
+      lander_position : Point_3d;
+      
+      middle_point : Float;
+      lander_middle : Float;
+      max_desc_speed : Float;
       
    begin
       accept Start do
@@ -91,9 +97,9 @@ package body Controller is
             protected_lander.Enter_Manual_Mode(Manual_Mode_Entered);
             
             
-            Put_Line("AI controlled: " & protected_lander.Get_AI_Controlled'Image);
-            Put_Line("Is Put: " & protected_lander.Get_Is_Put'Image);
-            Put_Line("Manual: " & Manual_Mode_Entered'Image);
+            --Put_Line("AI controlled: " & protected_lander.Get_AI_Controlled'Image);
+            --Put_Line("Is Put: " & protected_lander.Get_Is_Put'Image);
+            --Put_Line("Manual: " & Manual_Mode_Entered'Image);
             
             if Manual_Mode_Entered then
                protected_lander.Set_AI_Controlled(False);
@@ -101,59 +107,51 @@ package body Controller is
                protected_lander.User_Input(pressed_key => Key);
             end if;
       
-            -- Write your AI here.
-            Put_Line("lander pos" & Buffer_Pos.X'Image);
-            Put_Line("lander acc" & Buffer_Acc.Y'Image);
-            Put_Line("lander dir" & Buffer_Dir'Image);
             
             difference := 
               Sqrt((surface_start.X + surface_offset.X / 2.0 - Buffer_Pos.X) ** 2
                    + (surface_start.Y - Buffer_Pos.Y) ** 2);
-            Put_Line("Difference between:" & difference'Image);
                
+            middle_point := surface_start.X + surface_offset.X / 2.0 + 10.0;
+            
             if protected_lander.Get_AI_Controlled then
-               if counter mod 2 /= 0 then
+               lander_speed := protected_lander.Get_Lander_Speed(Mars_Lander);
+               lander_direction := protected_lander.Get_Lander_Direction(Mars_Lander);
+               lander_position := protected_lander.Get_Lander_Position(Mars_Lander);
+               lander_middle := Buffer_Pos.X;
                
-                  if surface_end.X <= (Buffer_Pos.X + 20.0)
-                    or else surface_end.X <= (Buffer_Pos.X - 20.0)
-                  then
+               max_desc_speed := -1.0;
+               
+               if (surface_end.X <= (Buffer_Pos.X + 20.0) or else surface_end.X <= (Buffer_Pos.X - 20.0)) and then difference > 5.0 then
+                  if lander_direction < 5.0 then
                      Key := SDLK_LEFT;
                   end if;
-            
-                  if surface_start.X >= (Buffer_Pos.X - 20.0)
-                    or else surface_start.X >= (Buffer_Pos.X + 20.0)
-                  then
+                  if lander_speed.X < -3.0 and lander_direction > -1.0 then
                      Key := SDLK_RIGHT;
                   end if;
-            
-                  --if surface_start.X <= (Buffer_Pos.X - 20.0)
-                  --  and then surface_end.X >= (Buffer_Pos.X + 20.0)
-                  if difference > 0.0 then
-                     buf_div := Buffer_Pos.Y / difference;
-                     if buf_div >= -1.0 and then buf_div <= 1.0 then
-                        Put_Line("Arccos(buf_div): " & Arccos(buf_div)'Image);
-                        if Buffer_Dir <= -5.0 
-                          and then (Arccos(buf_div) < 2.0 and then Arccos(buf_div) > 0.5) then
-                           Key := SDLK_LEFT;
-                        elsif Buffer_Dir >= 5.0 
-                          and then(Arccos(buf_div) > -2.0 and then Arccos(buf_div) < -0.5) then
-                           Key := SDLK_RIGHT;
-                        end if;          
-                     
-                     end if;
+                  
+               elsif (surface_start.X >= (Buffer_Pos.X - 20.0) or else surface_start.X >= (Buffer_Pos.X + 20.0)) and then difference > 5.0 then
+                  if lander_direction > -5.0 then
+                     Key := SDLK_RIGHT;
                   end if;
-               
+                  if lander_speed.X > 3.0 and lander_direction < 1.0 then
+                     Key := SDLK_LEFT;
+                  end if;
                else
-            
-                  if difference > 45.0 and then Buffer_Acc.Y < 3.0 then
-                     Key := SDLK_UP;
-                  elsif difference < 45.0 and then Buffer_Acc.Y > 2.0 then
-                     Key := SDLK_DOWN;
-                  else 
-                     Key := SDLK_UNKNOWN;
+                  max_desc_speed := -10.0;
+                  if lander_direction > 0.0 then
+                     Key := SDLK_RIGHT;
                   end if;
-              
+                  if lander_direction < 0.0 then
+                     Key := SDLK_LEFT;
+                  end if;
                end if;
+               
+               
+               if (lander_speed.Y < max_desc_speed) then
+                  Key := SDLK_UP;
+               end if;
+               
             end if;
             
             Put_Line(Key'Image);

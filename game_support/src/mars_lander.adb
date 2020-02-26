@@ -1,10 +1,11 @@
 with Ada.Text_IO; use Ada.Text_IO;
 
+with Ada.Numerics.Generic_Elementary_Functions;
 with Vector; use Vector;
 with Display.Image; use Display.Image;
 with Terrain; use Terrain;
 with Collision; use Collision;
-  
+
 package body Mars_Lander is
    
    -- count the elapsed time that the lander has been propulsed
@@ -15,6 +16,10 @@ package body Mars_Lander is
    inv : constant Point_3d := (0.0, -1.0, 0.0);
    
    subtype Sprite_Id is Natural range 1..3;
+   
+   package Funcs is new Ada.Numerics.Generic_Elementary_Functions(Float_Type => Float);
+   use Funcs;
+
    
    protected body protected_lander is
       
@@ -90,6 +95,7 @@ package body Mars_Lander is
             lander.Gravity := (0.0, 0.0, 0.0);
          end if;
          
+         lander.Acceleration := (0.0, 0.0, 0.0);
          if lander.stopped = False and then lander.crushed = False then
             case key is
             when SDLK_LEFT => 
@@ -109,16 +115,8 @@ package body Mars_Lander is
                lander.Direction := lander.Direction - 0.5;
          
             when SDLK_UP => 
-               if lander.Acceleration.Y > 0.0 then 
-                  lander.Acceleration.Y := lander.Acceleration.Y + 0.05;
-               else
-                  lander.Acceleration.Y := lander.Acceleration.Y + 1.0;
-               end if;
-               if lander.Acceleration.X > 0.0 then 
-                  lander.Acceleration.X := lander.Acceleration.X + 0.15;
-               else
-                  lander.Acceleration.X := lander.Acceleration.X + 1.0;
-               end if;
+               lander.Acceleration.X := - Sin(lander.Direction * 2.0 * Ada.Numerics.Pi / 180.0) * 6.5;
+               lander.Acceleration.Y := Cos(lander.Direction * 2.0 * Ada.Numerics.Pi / 180.0) * 6.5;
          
             when SDLK_DOWN =>
                if lander.Acceleration.Y > 0.0 then 
@@ -139,13 +137,8 @@ package body Mars_Lander is
             end case;
       
             lander.Speed := lander.Speed + (lander.Acceleration + lander.Gravity) * delta_t;
-         
-            if lander.Speed.Y < 0.0 and then (lander.Direction > 90.0 or else lander.Direction < -90.0 ) then
-               lander.Position := lander.Position + From_Angle(Angle => lander.Direction) * lander.Speed * inv * delta_t;
-            else
-               lander.Position := lander.Position + From_Angle(Angle => lander.Direction) * lander.Speed * delta_t;
-            end if;
-         
+            lander.Position := lander.Position + lander.Speed * delta_t;
+
             if lander.Acceleration.Y > 0.0 then
                propulsed_time := propulsed_time + 1;
             else
@@ -158,7 +151,7 @@ package body Mars_Lander is
          
             --Put_Line("pos: ( " & lander.Position.X'Image & ", " & lander.Position.Y'Image & " )");
             --Put_Line("dir: ( " & lander.Direction'Image & " )");
-            Put_Line("speed: ( " & lander.Speed.X'Image & ", " & lander.Speed.Y'Image & " )");
+            --Put_Line("speed: ( " & lander.Speed.X'Image & ", " & lander.Speed.Y'Image & " )");
             --Put_Line("acceleration: ( " & lander.Acceleration.X'Image & ", " & lander.Acceleration.Y'Image & " )");
             --Put_Line("stopped: ( " & lander.stopped'Image & " ), crushed: ( " & lander.crushed'Image & " )");
             --Put_Line("propulsed_time: ( " & propulsed_time'Image & " )");
@@ -286,7 +279,23 @@ package body Mars_Lander is
          Manual_Mode_Entered := protected_lander.Manual_Mode;
       end Enter_Manual_Mode;
       
-   end protected_lander;
+            
+      function Get_Lander_Speed(lander: in out Lander_Type) return Point_3d is
+      begin
+         return lander.Speed;
+      end Get_Lander_Speed;
+        
+      function Get_Lander_Direction(lander: in out Lander_Type) return Float is
+      begin
+         return lander.Direction;
+      end;
+      
+      function Get_Lander_Position(lander: in out Lander_Type) return Point_3d is
+      begin
+         return lander.Position;
+      end;
+      
+      end protected_lander;
    
    procedure Init (lander : in out Lander_Type; speed_x : Float; speed_y : Float) is
    begin
