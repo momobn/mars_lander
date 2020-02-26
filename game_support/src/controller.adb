@@ -138,13 +138,20 @@ package body Controller is
                      Key := SDLK_LEFT;
                   end if;
                else
-                  max_desc_speed := -10.0;
-                  if lander_direction > 0.0 then
-                     Key := SDLK_RIGHT;
+                  max_desc_speed := -5.0;
+                  
+                  if lander_speed.X /= 0.0 then
+                     if lander_speed.X > 0.0 and then lander_direction < 1.0 then
+                        Key := SDLK_LEFT;
+                        Put("Speed > 0.0");
+                     end if;
+                     if lander_speed.X < 0.0 and then lander_direction > -1.0 then
+                        Put("Speed < 0.0");
+                        Key := SDLK_RIGHT;
+                     end if;
                   end if;
-                  if lander_direction < 0.0 then
-                     Key := SDLK_LEFT;
-                  end if;
+                  
+                  
                end if;
                
                
