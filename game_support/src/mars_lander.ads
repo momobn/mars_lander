@@ -18,7 +18,9 @@ package Mars_Lander is
       procedure Set_Is_Put (Is_Put : Boolean);
       procedure Set_AI_Controlled (AI_Controlled : Boolean);
       procedure Enter_Manual_Mode (Manual_Mode_Entered : out Boolean);
-      
+      function Get_Lander_Speed(lander: in out Lander_Type) return Point_3d;
+      function Get_Lander_Direction(lander: in out Lander_Type) return Float;
+      function Get_Lander_Position(lander: in out Lander_Type) return Point_3d;
    private
       Is_Put : Boolean := False;
       AI_Controlled : Boolean := False;
