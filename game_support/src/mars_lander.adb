@@ -132,17 +132,6 @@ package body Mars_Lander is
             else
                propulsed_time := 0;
             end if;
-         
-            Buffer_Pos := lander.Position;
-            Buffer_Acc := lander.Acceleration;
-            Buffer_Dir := lander.Direction;
-         
-            --Put_Line("pos: ( " & lander.Position.X'Image & ", " & lander.Position.Y'Image & " )");
-            --Put_Line("dir: ( " & lander.Direction'Image & " )");
-            --Put_Line("speed: ( " & lander.Speed.X'Image & ", " & lander.Speed.Y'Image & " )");
-            --Put_Line("acceleration: ( " & lander.Acceleration.X'Image & ", " & lander.Acceleration.Y'Image & " )");
-            --Put_Line("stopped: ( " & lander.stopped'Image & " ), crushed: ( " & lander.crushed'Image & " )");
-            --Put_Line("propulsed_time: ( " & propulsed_time'Image & " )");
          end if;
          
          Is_Put := False;
