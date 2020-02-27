@@ -54,6 +54,9 @@ package body Controller is
       lander_middle : Float;
       max_desc_speed : Float;
       
+      UNALIGNED_DESCEND_SPEED : constant Float := -1.0;
+      ALIGNED_DESCEND_SPEED : constant Float := -5.0;
+      
    begin
       accept Start do
          Window :=
@@ -120,7 +123,7 @@ package body Controller is
                lander_position := protected_lander.Get_Lander_Position(Mars_Lander);
                lander_middle := Buffer_Pos.X;
                
-               max_desc_speed := -1.0;
+               max_desc_speed := UNALIGNED_DESCEND_SPEED;
                
                if (surface_end.X <= (Buffer_Pos.X + 20.0) or else surface_end.X <= (Buffer_Pos.X - 20.0)) and then difference > 5.0 then
                   if lander_direction < 5.0 then
@@ -138,7 +141,7 @@ package body Controller is
                      Key := SDLK_LEFT;
                   end if;
                else
-                  max_desc_speed := -5.0;
+                  max_desc_speed := ALIGNED_DESCEND_SPEED;
                   
                   if lander_speed.X /= 0.0 then
                      if lander_speed.X > 0.0 and then lander_direction < 1.0 then
