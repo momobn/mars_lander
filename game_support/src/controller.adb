@@ -22,7 +22,6 @@ package body Controller is
       surface_start : Point_3d;
       surface_offset : constant Point_3d := 
         (60.0, 0.0, 0.0);
-      buff_pt : Point_3d;
       surface_end : Point_3d;
       
       difference : Float;
@@ -100,32 +99,32 @@ package body Controller is
             protected_lander.Enter_Manual_Mode(Manual_Mode_Entered);
             
             
-            --Put_Line("AI controlled: " & protected_lander.Get_AI_Controlled'Image);
-            --Put_Line("Is Put: " & protected_lander.Get_Is_Put'Image);
-            --Put_Line("Manual: " & Manual_Mode_Entered'Image);
-            
             if Manual_Mode_Entered then
                protected_lander.Set_AI_Controlled(False);
                protected_lander.Set_Is_Put(True);
                protected_lander.User_Input(pressed_key => Key);
             end if;
       
-            
-            difference := 
-              Sqrt((surface_start.X + surface_offset.X / 2.0 - Buffer_Pos.X) ** 2
-                   + (surface_start.Y - Buffer_Pos.Y) ** 2);
                
             middle_point := surface_start.X + surface_offset.X / 2.0 + 10.0;
             
             if protected_lander.Get_AI_Controlled then
+               
                lander_speed := protected_lander.Get_Lander_Speed(Mars_Lander);
                lander_direction := protected_lander.Get_Lander_Direction(Mars_Lander);
                lander_position := protected_lander.Get_Lander_Position(Mars_Lander);
-               lander_middle := Buffer_Pos.X;
+               lander_middle := lander_position.X;
+               difference := 
+                 Sqrt((surface_start.X + surface_offset.X / 2.0 - lander_position.X) ** 2
+                      + (surface_start.Y - lander_position.Y) ** 2);
+
                
                max_desc_speed := UNALIGNED_DESCEND_SPEED;
                
-               if (surface_end.X <= (Buffer_Pos.X + 20.0) or else surface_end.X <= (Buffer_Pos.X - 20.0)) and then difference > 5.0 then
+               if (surface_end.X <= (lander_position.X + 20.0) 
+                   or else surface_end.X <= (lander_position.X - 20.0)) 
+                 and then difference > 5.0 
+               then
                   if lander_direction < 5.0 then
                      Key := SDLK_LEFT;
                   end if;
@@ -133,7 +132,10 @@ package body Controller is
                      Key := SDLK_RIGHT;
                   end if;
                   
-               elsif (surface_start.X >= (Buffer_Pos.X - 20.0) or else surface_start.X >= (Buffer_Pos.X + 20.0)) and then difference > 5.0 then
+               elsif (surface_start.X >= (lander_position.X - 20.0) 
+                      or else surface_start.X >= (lander_position.X + 20.0)) 
+                 and then difference > 5.0 
+               then
                   if lander_direction > -5.0 then
                      Key := SDLK_RIGHT;
                   end if;
@@ -154,7 +156,6 @@ package body Controller is
                      end if;
                   end if;
                   
-                  
                end if;
                
                
@@ -168,14 +169,6 @@ package body Controller is
             -- change lander parameters
             protected_lander.Step(lander => Mars_Lander,
                                   key   => Key);
-            
-            buff_pt := (0.0, 0.0, 0.0);
-            buff_pt.X := surface_start.X + surface_offset.X / 2.0;
-            buff_pt.Y := surface_start.Y;
-            Draw_Line(Canvas => Canvas,
-                      P1     => Buffer_Pos,
-                      P2     => buff_pt,
-                      Color  => White);
             
             exit when Is_Killed;
          

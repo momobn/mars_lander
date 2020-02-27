@@ -5,10 +5,6 @@ package Mars_Lander is
 
    type Lander_Type is private;
    
-   Buffer_Pos : Point_3d;
-   Buffer_Acc : Point_3d;
-   Buffer_Dir : Float;
-   
    protected protected_lander is 
       entry Step (lander : in out Lander_Type; key : in Key_T);
       procedure Draw (lander : in out Lander_Type; canvas : Canvas_ID);
