@@ -50,7 +50,7 @@ package body Display.Basic is
       w       : Integer := 400;
       h       : Integer := 400;
       bpp   :  Interfaces.C.int := 32;
-    --  flags :  Interfaces.C.unsigned :=   SDL_HWSURFACE + SDL_RESIZABLE + SDL_DOUBLEBUF;
+      --  flags :  Interfaces.C.unsigned :=   SDL_HWSURFACE + SDL_RESIZABLE + SDL_DOUBLEBUF;
    end record;
 
 
@@ -67,10 +67,10 @@ package body Display.Basic is
    -- Draw --
    ----------
 
---     procedure Swap_Buffers(Window : Window_ID) is
---     begin
---        SDL_GL_SwapWindow (Stored_Windows(Window).window);
---     end Swap_Buffers;
+   --     procedure Swap_Buffers(Window : Window_ID) is
+   --     begin
+   --        SDL_GL_SwapWindow (Stored_Windows(Window).window);
+   --     end Swap_Buffers;
 
 
    function Get_Zoom_Factor(Canvas : Canvas_ID) return Float is
@@ -82,7 +82,7 @@ package body Display.Basic is
       C : T_Internal_Canvas := Get_Internal_Canvas(Canvas);
    begin
       Display.Basic.Utils.Set_Zoom_Factor(Canvas, ZF);
-    --  Reshape(Canvas, Integer(C.Surface.w), Integer(C.Surface.h));
+      --  Reshape(Canvas, Integer(C.Surface.w), Integer(C.Surface.h));
       UpdateProjection(Canvas);
    end Set_Zoom_Factor;
 
@@ -102,32 +102,32 @@ package body Display.Basic is
       return Current_Id;
    end Create_Window;
 
---     type T_Internal_Canvas is record
---        Surface : access SDL_Surface;
---        Zoom_Factor : Float := 1.0;
---        Center : Screen_Point := (0, 0);
---     end record;
---
---     type Internal_Canvas_Array is array (Canvas_ID) of T_Internal_Canvas;
---
---     Internal_Canvas : Internal_Canvas_Array;
---     Nb_Canvas : Integer := 0;
---
---
---     function Register_SDL_Surface(S : access SDL_Surface) return Canvas_ID is
---        Current_Id : Canvas_ID;
---     begin
---        if Nb_Canvas = Internal_Canvas'Length then
---           raise Too_Many_Canvas;
---        end if;
---
---        Current_Id := Canvas_ID(Integer(Internal_Canvas'First) + Nb_Canvas);
---        Internal_Canvas(Current_Id) := T_Internal_Canvas'(Surface     => S,
---                                                          Zoom_Factor => 1.0,
---                                                          Center => (0, 0));
---        Nb_Canvas := Nb_Canvas + 1;
---        return Current_Id;
---     end Register_SDL_Surface;
+   --     type T_Internal_Canvas is record
+   --        Surface : access SDL_Surface;
+   --        Zoom_Factor : Float := 1.0;
+   --        Center : Screen_Point := (0, 0);
+   --     end record;
+   --
+   --     type Internal_Canvas_Array is array (Canvas_ID) of T_Internal_Canvas;
+   --
+   --     Internal_Canvas : Internal_Canvas_Array;
+   --     Nb_Canvas : Integer := 0;
+   --
+   --
+   --     function Register_SDL_Surface(S : access SDL_Surface) return Canvas_ID is
+   --        Current_Id : Canvas_ID;
+   --     begin
+   --        if Nb_Canvas = Internal_Canvas'Length then
+   --           raise Too_Many_Canvas;
+   --        end if;
+   --
+   --        Current_Id := Canvas_ID(Integer(Internal_Canvas'First) + Nb_Canvas);
+   --        Internal_Canvas(Current_Id) := T_Internal_Canvas'(Surface     => S,
+   --                                                          Zoom_Factor => 1.0,
+   --                                                          Center => (0, 0));
+   --        Nb_Canvas := Nb_Canvas + 1;
+   --        return Current_Id;
+   --     end Register_SDL_Surface;
 
    Quadric     : System.Address;
    procedure UpdateProjection(Canvas : Canvas_ID) is
@@ -158,17 +158,17 @@ package body Display.Basic is
       --gluPerspective(70.0,GLdouble(Width)/GLdouble(Height),1.0,1000.0);
 
       --      glOrtho (-GLdouble(Width / 2), GLdouble(Width / 2), -GLdouble(Height / 2), GLdouble(Height / 2), -100.0, 300.0);
---        gluLookAt (0.0, 0.0, -100.0,
---                   0.0, 0.0, 0.0,
---                   0.0, 1.0, 0.0);
---        Ratio := GLdouble (w) / GLdouble (h);
---
---        if w > h then
---           glOrtho (-100.0 * Ratio, 100.0 * Ratio, -100.0, 100.0, -100.0, 300.0);
---        else
---           glOrtho (-100.0, 100.0, -100.0 / Ratio, 100.0 / Ratio, -100.0, 300.0);
---        end if;
-     -- glOrtho (-GLdouble(Width / 2), GLdouble(Width / 2), -GLdouble(Height / 2), GLdouble(Height / 2), -100.0, 300.0);
+      --        gluLookAt (0.0, 0.0, -100.0,
+      --                   0.0, 0.0, 0.0,
+      --                   0.0, 1.0, 0.0);
+      --        Ratio := GLdouble (w) / GLdouble (h);
+      --
+      --        if w > h then
+      --           glOrtho (-100.0 * Ratio, 100.0 * Ratio, -100.0, 100.0, -100.0, 300.0);
+      --        else
+      --           glOrtho (-100.0, 100.0, -100.0 / Ratio, 100.0 / Ratio, -100.0, 300.0);
+      --        end if;
+      -- glOrtho (-GLdouble(Width / 2), GLdouble(Width / 2), -GLdouble(Height / 2), GLdouble(Height / 2), -100.0, 300.0);
 
 
       glMatrixMode (GL_MODELVIEW);
@@ -192,17 +192,17 @@ package body Display.Basic is
    begin
 
       if SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1) /= 0 then
-          Ada.Text_IO.Put_Line ("Problem in GL SetAttribute");
-       end if;
-       if SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24) /= 0 then
-          Ada.Text_IO.Put_Line ("Problem in GL SetAttribute");
-       end if;
+         Ada.Text_IO.Put_Line ("Problem in GL SetAttribute");
+      end if;
+      if SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24) /= 0 then
+         Ada.Text_IO.Put_Line ("Problem in GL SetAttribute");
+      end if;
 
---        if SDL_GL_SetAttribute( SDL_GL_MULTISAMPLEBUFFERS, 1 ) /= 0 then
---           Ada.Text_IO.Put_Line ("impossible d'initialiser SDL_GL_MULTISAMPLEBUFFERS à 1");
---        elsif SDL_GL_SetAttribute( SDL_GL_MULTISAMPLESAMPLES, 6 ) /= 0 then
---            Ada.Text_IO.Put_Line ("impossible d'initialiser SDL_GL_MULTISAMPLESAMPLES sur 6 buffers");
---        end if;
+      --        if SDL_GL_SetAttribute( SDL_GL_MULTISAMPLEBUFFERS, 1 ) /= 0 then
+      --           Ada.Text_IO.Put_Line ("impossible d'initialiser SDL_GL_MULTISAMPLEBUFFERS à 1");
+      --        elsif SDL_GL_SetAttribute( SDL_GL_MULTISAMPLESAMPLES, 6 ) /= 0 then
+      --            Ada.Text_IO.Put_Line ("impossible d'initialiser SDL_GL_MULTISAMPLESAMPLES sur 6 buffers");
+      --        end if;
 
       if SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1) /= 0 then
          Ada.Text_IO.Put_Line ("Problem in GL SetAttribute");
@@ -215,7 +215,7 @@ package body Display.Basic is
       glcontext := SDL_GL_CreateContext(S.window);
 
       if System.Address (glcontext) = Null_Address then
-             Ada.Text_IO.Put_Line ("Problem in creating GL context");
+         Ada.Text_IO.Put_Line ("Problem in creating GL context");
       end if;
 
 
@@ -224,10 +224,10 @@ package body Display.Basic is
 
 
 
---        glCullFace( GL_BACK );
---        glFrontFace( GL_CCW );
---        glEnable( GL_CULL_FACE );
---
+      --        glCullFace( GL_BACK );
+      --        glFrontFace( GL_CCW );
+      --        glEnable( GL_CULL_FACE );
+      --
 
       glClearDepth(1.0);
       glShadeModel(GL_SMOOTH);
@@ -235,40 +235,40 @@ package body Display.Basic is
       glHint(GL_POLYGON_SMOOTH_HINT, GL_NICEST);
       glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
       glEnable(GL_LINE_SMOOTH);
---        glEnable(GL_POLYGON_SMOOTH);
+      --        glEnable(GL_POLYGON_SMOOTH);
       glEnable(GL_POINT_SMOOTH);
       glEnable(GL_MULTISAMPLE);
---           glDisable(GL_LINE_SMOOTH);
---        glDisable(GL_POLYGON_SMOOTH);
---        glDisable(GL_POINT_SMOOTH);
---        glEnable(GL_BLEND);
---        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
---  glFrontFace (GL_CW)
+      --           glDisable(GL_LINE_SMOOTH);
+      --        glDisable(GL_POLYGON_SMOOTH);
+      --        glDisable(GL_POINT_SMOOTH);
+      --        glEnable(GL_BLEND);
+      --        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+      --  glFrontFace (GL_CW)
 
---  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
---        glEnable(GL_BLEND);
-    --  glEnable(GL_POLYGON_SMOOTH);
---      glBlendFunc( GL_SRC_ALPHA_SATURATE, GL_ONE ) ;
+      --  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+      --        glEnable(GL_BLEND);
+      --  glEnable(GL_POLYGON_SMOOTH);
+      --      glBlendFunc( GL_SRC_ALPHA_SATURATE, GL_ONE ) ;
       glEnable (GL_DEPTH_TEST);
-    glEnable (GL_COLOR_MATERIAL);
+      glEnable (GL_COLOR_MATERIAL);
 
---      glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
-    -- lEnable (GL_NORMALIZE);
- --     glDepthFunc (GL_LESS);
+      --      glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+      -- lEnable (GL_NORMALIZE);
+      --     glDepthFunc (GL_LESS);
 
---       glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+      --       glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 
 
-       Quadric := gluNewQuadric;
+      Quadric := gluNewQuadric;
       glEnable (GL_LIGHTING);
       glEnable (GL_LIGHT0);
       glLightfv (GL_LIGHT0, GL_AMBIENT, light_ambient (0)'Access);
       glLightfv (GL_LIGHT0, GL_DIFFUSE, light_diffuse (0)'Access);
       glLightfv (GL_LIGHT0, GL_POSITION, light_position (0)'Access);
-   --  glLightModeli(GL_LIGHT_MODEL_TWO_SIDE,GL_TRUE);
+      --  glLightModeli(GL_LIGHT_MODEL_TWO_SIDE,GL_TRUE);
 
       glClearColor (0.0, 0.0, 0.0, 1.0);
---glDisable(GL_CULL_FACE);
+      --glDisable(GL_CULL_FACE);
 
 
       --gluQuadricDrawStyle(Quadric, GLU_FILL);
@@ -294,10 +294,10 @@ package body Display.Basic is
       IC : T_Internal_Canvas := Get_Internal_Canvas (Canvas);
    begin
       glPushMatrix;
---        glTranslated
---          (GLdouble (Position.X - (Float(IC.Center.X) * (1.0/IC.Zoom_Factor))),
---           GLdouble (Position.Y - (Float(IC.Center.Y) * (1.0/IC.Zoom_Factor))),
---           GLdouble (Position.Z));
+      --        glTranslated
+      --          (GLdouble (Position.X - (Float(IC.Center.X) * (1.0/IC.Zoom_Factor))),
+      --           GLdouble (Position.Y - (Float(IC.Center.Y) * (1.0/IC.Zoom_Factor))),
+      --           GLdouble (Position.Z));
       glTranslated
         (GLdouble ( - (Float(IC.Center.X) * (1.0/IC.Zoom_Factor))),
          GLdouble (- (Float(IC.Center.Y) * (1.0/IC.Zoom_Factor))),
@@ -322,9 +322,9 @@ package body Display.Basic is
 
    function Create_SDL_Window (Width : Integer; Height : Integer; Name : String) return SDL_Window_Surface is
       S : SDL_Window_Surface;
-     SDL_S : access SDL_Surface;
+      SDL_S : access SDL_Surface;
    begin
---        Ada.Text_IO.Put_Line("Create_SDL_Window Entry ");
+      --        Ada.Text_IO.Put_Line("Create_SDL_Window Entry ");
       if not Initialized then
          raise Graphical_Context_Not_Initialized;
       end if;
@@ -332,19 +332,19 @@ package body Display.Basic is
       --  To center a non-fullscreen window we need to set an environment
       --  variable
       if SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2) /= 0 then
-             Ada.Text_IO.Put_Line ("Problem in GL SetAttribute");
+         Ada.Text_IO.Put_Line ("Problem in GL SetAttribute");
       end if;
 
       if SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1) /= 0 then
-          Ada.Text_IO.Put_Line ("Problem in GL SetAttribute");
+         Ada.Text_IO.Put_Line ("Problem in GL SetAttribute");
       end if;
       S.window := SDL_CreateWindow(New_String(Name), SDL_WINDOWPOS_CENTERED,
-                                 SDL_WINDOWPOS_CENTERED,
-                                 Interfaces.C.int(Width),
-                                  Interfaces.C.int(Height),
+                                   SDL_WINDOWPOS_CENTERED,
+                                   Interfaces.C.int(Width),
+                                   Interfaces.C.int(Height),
                                    SDL_WINDOW_OPENGL or
                                      SDL_WINDOW_SHOWN or
-                                  SDL_WINDOW_RESIZABLE);
+                                       SDL_WINDOW_RESIZABLE);
 
 
 
@@ -352,7 +352,7 @@ package body Display.Basic is
       S.h := Height;
 
 
-        SDL_S := SDL_GetWindowSurface(S.window);
+      SDL_S := SDL_GetWindowSurface(S.window);
 
       if SDL_S = null then
          Put_Line ("Error retrieving the window surface");
@@ -422,7 +422,7 @@ package body Display.Basic is
    procedure Draw_Sphere (Canvas : Canvas_ID; Position: Screen_Point; Radius : Integer; Color: RGBA_T) is null;
 
    procedure Draw_Circle (Canvas : Canvas_ID; Position: Point_3d; Radius : Float; Color: RGBA_T) is
-            IC : T_Internal_Canvas := Get_Internal_Canvas(Canvas);
+      IC : T_Internal_Canvas := Get_Internal_Canvas(Canvas);
    begin
 
       glPushMatrix;
@@ -460,7 +460,7 @@ package body Display.Basic is
 
       glBegin(GL_LINES);
 
---        glColor3ub(GLubyte (Color.R), GLubyte (Color.G), GLubyte (Color.B));
+      --        glColor3ub(GLubyte (Color.R), GLubyte (Color.G), GLubyte (Color.B));
 
       glVertex3d(double (P1.X), double (P1.Y), double (P1.Z));
       glVertex3d(double (P2.X), double (P2.Y), double (P2.Z));
@@ -475,7 +475,7 @@ package body Display.Basic is
 
 
    procedure Draw_Text (Canvas : Canvas_ID; Position: Point_3d; Text : String; Color: RGBA_T; Bg_Color : RGBA_T := Black; Wrap: Boolean := True) is
-    --  S : access SDL_Surface;
+      --  S : access SDL_Surface;
       --Format : UInt32;
       IC : T_Internal_Canvas := Get_Internal_Canvas(Canvas);
       Cursor : Screen_Point := (0, 0);
@@ -487,10 +487,10 @@ package body Display.Basic is
    begin
       glPushMatrix;
 
---        glTranslated
---          (GLdouble (Position.X),
---           GLdouble (Position.Y),
---           GLdouble (Position.Z));
+      --        glTranslated
+      --          (GLdouble (Position.X),
+      --           GLdouble (Position.Y),
+      --           GLdouble (Position.Z));
       glTranslated
         (GLdouble (Position.X - (Float(IC.Center.X) * (1.0/IC.Zoom_Factor))),
          GLdouble (Position.Y - (Float(IC.Center.Y) * (1.0/IC.Zoom_Factor))),
@@ -504,15 +504,15 @@ package body Display.Basic is
       --glMatrixMode(GL_PROJECTION);
       --glPushMatrix;
       --glLoadIdentity;
-     -- glOrtho(0.0, double(IC.Surface.w),
-       --         double(IC.Surface.h), 0.0, 0.0, 1.0);
+      -- glOrtho(0.0, double(IC.Surface.w),
+      --         double(IC.Surface.h), 0.0, 0.0, 1.0);
 
       Disable_3d_Light(Canvas);
       glDisable(GL_DEPTH_TEST);
 
       glEnable(GL_TEXTURE_2D);
       glEnable(GL_BLEND);
---      glBlendFunc(GL_SRC_ALPHA, GL_ONE);--_MINUS_SRC_ALPHA);
+      --      glBlendFunc(GL_SRC_ALPHA, GL_ONE);--_MINUS_SRC_ALPHA);
       glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
       Set_Color (Color);
@@ -546,9 +546,9 @@ package body Display.Basic is
       Enable_3d_Light(Canvas);
 
 
---        glPopMatrix;
---        glMatrixMode(GL_MODELVIEW);
---        glLoadIdentity;
+      --        glPopMatrix;
+      --        glMatrixMode(GL_MODELVIEW);
+      --        glLoadIdentity;
 
       glPopMatrix;
    end Draw_Text;
@@ -567,14 +567,14 @@ package body Display.Basic is
 
       glEnable(GL_TEXTURE_2D);
       glEnable(GL_BLEND);
---      glBlendFunc(GL_SRC_ALPHA, GL_ONE);--_MINUS_SRC_ALPHA);
+      --      glBlendFunc(GL_SRC_ALPHA, GL_ONE);--_MINUS_SRC_ALPHA);
       glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
       glMatrixMode(GL_PROJECTION);
       glPushMatrix;
       glLoadIdentity;
       glOrtho(0.0, double(IC.Surface.w),
-                double(IC.Surface.h), 0.0, 0.0, 1.0);
+              double(IC.Surface.h), 0.0, 0.0, 1.0);
 
       Set_Color (Color);
 
@@ -617,11 +617,11 @@ package body Display.Basic is
    procedure Draw_Rect (Canvas : Canvas_ID; Position : Screen_Point; Width, Height : Integer; Color : RGBA_T) is
       C : T_Internal_Canvas := Get_Internal_Canvas(Canvas);
    begin
-       glMatrixMode(GL_PROJECTION);
+      glMatrixMode(GL_PROJECTION);
       glPushMatrix;
       glLoadIdentity;
       glOrtho(0.0, double(C.Surface.w),
-                double(C.Surface.h), 0.0, 0.0, 1.0);
+              double(C.Surface.h), 0.0, 0.0, 1.0);
       Disable_3d_Light (Canvas);
       Set_Color (Color);
 
@@ -735,7 +735,7 @@ package body Display.Basic is
       glPushMatrix;
       glLoadIdentity;
       glOrtho(0.0, double(C.Surface.w),
-                double(C.Surface.h), 0.0, 0.0, 1.0);
+              double(C.Surface.h), 0.0, 0.0, 1.0);
       Disable_3d_Light (Canvas);
       Set_Color (Color);
 
@@ -758,19 +758,19 @@ package body Display.Basic is
    function Scale (Canvas: T_Internal_Canvas; L : Float) return Integer is (Integer (L * Canvas.Zoom_Factor));
 
    procedure Set_Center (Canvas : Canvas_ID; Position : Point_3d)is
-       C : T_Internal_Canvas := Get_Internal_Canvas(Canvas);
+      C : T_Internal_Canvas := Get_Internal_Canvas(Canvas);
    begin
       Display.Basic.Utils.Set_Center(Canvas, (Scale(C, Position.X), Scale(C, Position.Y)));
    end Set_Center;
 
    procedure Set_Center (Canvas : Canvas_ID; Position : Screen_Point) is
    begin
-       Display.Basic.Utils.Set_Center(Canvas, Position);
+      Display.Basic.Utils.Set_Center(Canvas, Position);
    end Set_Center;
 
    function Get_Center (Canvas : Canvas_ID) return Screen_Point  is
    begin
-        return Display.Basic.Utils.Get_Center(Canvas);
+      return Display.Basic.Utils.Get_Center(Canvas);
    end Get_Center;
 
    function To_Point3d (Canvas : Canvas_ID; P : Screen_Point) return Point_3d is
@@ -802,14 +802,14 @@ package body Display.Basic is
    Internal_Keyboard : Keyboard_T := (others => False);
 
 
-    Killed : Boolean := False;
+   Killed : Boolean := False;
 
    function Is_Killed return Boolean is
    begin
       return Killed;
    end Is_Killed;
 
-     procedure Poll_Events is
+   procedure Poll_Events is
       E : aliased SDL_Event;
    begin
       while SDL_PollEvent (E'Access) /= 0 loop
@@ -1360,21 +1360,21 @@ package body Display.Basic is
          Ada.Text_IO.Put_Line ("Error!!!");
       end if;
       SDL_GL_SwapWindow(Stored_Windows(Window).window);
---SDL_GL_SwapBuffers;
-     -- SDL_Delay (1);
+      --SDL_GL_SwapBuffers;
+      -- SDL_Delay (1);
       glClear (GL_COLOR_BUFFER_BIT or GL_DEPTH_BUFFER_BIT);
-  --    Poll_Events(S);
+      --    Poll_Events(S);
 
 
---        SDL_GL_SwapWindow(window);
---        if SDL_UpdateWindowSurface (Stored_Windows(Window).window) < 0 then
---           raise Display_Error;
---        end if;
---        if Erase then
---           if SDL_FillRect (Canvas.Surface, null, 0) < 0 then
---              raise Display_Error;
---           end if;
---        end if;
+      --        SDL_GL_SwapWindow(window);
+      --        if SDL_UpdateWindowSurface (Stored_Windows(Window).window) < 0 then
+      --           raise Display_Error;
+      --        end if;
+      --        if Erase then
+      --           if SDL_FillRect (Canvas.Surface, null, 0) < 0 then
+      --              raise Display_Error;
+      --           end if;
+      --        end if;
       Poll_Events;
       SDL_PumpEvents;
       Update_Keyboard_Status;

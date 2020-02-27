@@ -31,6 +31,10 @@
   <key type="strings" name="window_x_Preferences" >
     <value> 215</value>
   </key>
+  <key type="strings" name="search-recent-Sources" >
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\gnat_sdl\gnat_sdl2\src\sdl_render_h.ads:864:22</value>
+    <Length> 5</Length>
+  </key>
   <key type="strings" name="debugger-variables-filter-recent" >
     <Length> 5</Length>
   </key>
@@ -47,7 +51,10 @@
   <key type="strings" name="project_view-filter-recent" >
     <Length> 5</Length>
   </key>
-  <key type="strings" name="search-recent-Actions"  />
+  <key type="strings" name="search-recent-Actions" >
+    <value>&lt;span foreground=&quot;#FF3333&quot;&gt;r&lt;/span&gt;&lt;span foreground=&quot;#FF3333&quot;&gt;e&lt;/span&gt;&lt;span foreground=&quot;#FF3333&quot;&gt;n&lt;/span&gt;&lt;span foreground=&quot;#FF3333&quot;&gt;a&lt;/span&gt;&lt;span foreground=&quot;#FF3333&quot;&gt;m&lt;/span&gt;&lt;span foreground=&quot;#FF3333&quot;&gt;e&lt;/span&gt; file</value>
+    <Length> 5</Length>
+  </key>
   <key type="strings" name="Custom..." >
     <value>%external</value>
     <value />
@@ -128,11 +135,6 @@
     <value>main.exe</value>
     <value>gprbuild -q -P ../mars_lander -gnatwa</value>
     <value>main.exe</value>
-    <value>cd obj</value>
-    <value>main.exe</value>
-    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
-    <value>cd ../..</value>
-    <value>main.exe</value>
     <value>gprbuild -q -P ../mars_lander -gnatwa</value>
     <value>main.exe</value>
     <value>gprbuild -q -P ../mars_lander -gnatwa</value>
@@ -140,6 +142,8 @@
     <value>gprbuild -q -P ../mars_lander -gnatwa</value>
     <value>main.exe</value>
     <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>]]]]]]]]]]7</value>
     <value>main.exe</value>
     <value>gprbuild -q -P ../mars_lander -gnatwa</value>
     <value>main.exe</value>
@@ -149,22 +153,26 @@
     <value>main.exe</value>
     <value>gprbuild -q -P ../mars_lander -gnatwa</value>
     <value>main.exe</value>
-    <value>cd obj</value>
-    <value>cd ../..</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>main.exe</value>
     <value>dir</value>
-    <value>main.exe</value>
+    <value>ls</value>
+    <value>mian.exe</value>
     <value>gprbuild -q -P ../mars_lander -gnatwa</value>
+    <value>gprbuild -q -P ./mars_lander -gnatwa</value>
+    <value>main.exe</value>
+    <value>./main.exe</value>
     <value>cd obj</value>
+    <value>gprbuild -q -P ./mars_lander -gnatwa</value>
     <value>cd ..</value>
     <value>main.exe</value>
     <value>gprbuild -q -P ../mars_lander -gnatwa</value>
     <value>main.exe</value>
-    <value>cd obj</value>
-    <value>cd ..</value>
-    <value>dir</value>
-    <value>main.exe</value>
     <value>gprbuild -q -P ../mars_lander -gnatwa</value>
-    <value>cd ..</value>
     <value>main.exe</value>
     <value>gprbuild -q -P ../mars_lander -gnatwa</value>
     <value>main.exe</value>
@@ -178,14 +186,16 @@
     <value>main.exe</value>
     <value>gprbuild -q -P ../mars_lander -gnatwa</value>
     <value>main.exe</value>
-    <value>cd obj</value>
     <Length> 100</Length>
   </key>
   <key type="strings" name="search-recent-Entities" >
     <value>Draw_Rect:display-basic.ads:310:14</value>
     <Length> 5</Length>
   </key>
-  <key type="strings" name="search-recent-File names"  />
+  <key type="strings" name="search-recent-File names" >
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\stm32f4\src\drawing.adb</value>
+    <Length> 5</Length>
+  </key>
   <key type="booleans" name="commits-filter-negate" >
     <value>FALSE</value>
   </key>
@@ -247,16 +257,16 @@
     <Length> 1</Length>
   </key>
   <key type="strings" name="reopen_files" >
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\vector.adb</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\collision.ads</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\collision.adb</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\perlin.adb</value>
     <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\mars_lander.adb</value>
     <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\mars_lander.ads</value>
-    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\vector.adb</value>
-    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\vector.ads</value>
-    <value>C:\GNAT\2019\lib\gcc\x86_64-pc-mingw32\8.3.1\adainclude\i-cstrin.adb</value>
-    <value>C:\GNAT\2019\lib\gcc\x86_64-pc-mingw32\8.3.1\adainclude\i-cstrin.ads</value>
-    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\display-basic.ads</value>
-    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\backends\opengl_sdl_gnat_sdl2\display-basic.adb</value>
     <value>E:\eidd-3A\temps reels\mars_lander_lab\src\main.adb</value>
-    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\display-image.adb</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\terrain.ads</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\terrain.adb</value>
+    <value>E:\eidd-3A\temps reels\mars_lander_lab\game_support\src\display-basic.ads</value>
   </key>
   <key type="strings" name="GNAT Metrics for file" >
     <value>%gnat metric -dd -ox %O/metrix.xml -x -P%pp %X %F</value>

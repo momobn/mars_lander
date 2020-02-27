@@ -1,0 +1,6 @@
+perlin.adb:1:18: warning: no entities of "Ada.Numerics.Elementary_Functions" are referenced
+perlin.adb:1:41: warning: use clause for package "Elementary_Functions" has no effect
+perlin.adb:5:09: warning: no entities of "Ada.Text_IO" are referenced
+perlin.adb:5:19: warning: use clause for package "Text_IO" has no effect
+perlin.adb:53:07: warning: "H" is not modified, could be declared constant
+perlin.adb:106:14: warning: redundant conversion, expression is of type "Unsigned_32"
