@@ -1,5 +1,8 @@
-mars_lander.adb:45:24: warning: potentially blocking operation in protected operation
-mars_lander.adb:172:10: warning: "lower_bound" is not modified, could be declared constant
-mars_lander.adb:173:10: warning: "upper_bound" is not modified, could be declared constant
-mars_lander.adb:174:10: warning: "lander_img" is not modified, could be declared constant
-mars_lander.adb:196:10: warning: "lander_spritemap" is not modified, could be declared constant
+mars_lander.adb:1:09: warning: no entities of "Ada.Text_IO" are referenced
+mars_lander.adb:1:19: warning: use clause for package "Text_IO" has no effect
+mars_lander.adb:16:04: warning: constant "inv" is not referenced
+mars_lander.adb:50:24: warning: potentially blocking operation in protected operation
+mars_lander.adb:142:10: warning: "lower_bound" is not modified, could be declared constant
+mars_lander.adb:143:10: warning: "upper_bound" is not modified, could be declared constant
+mars_lander.adb:144:10: warning: "lander_img" is not modified, could be declared constant
+mars_lander.adb:166:10: warning: "lander_spritemap" is not modified, could be declared constant

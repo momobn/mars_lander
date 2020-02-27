@@ -10,17 +10,11 @@ RN
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U main%b		main.adb		6b1b3279 NE OO SU
-W ada%s			ada.ads			ada.ali
-W ada.real_time%s	a-reatim.adb		a-reatim.ali
+U main%b		main.adb		2166d1af NE OO SU
 W controller%s		controller.adb		controller.ali
-W display%s		display.ads		display.ali
-W display.basic%s	display-basic.adb	display-basic.ali
-W mars_lander%s		mars_lander.adb		mars_lander.ali
 Z system%s		system.ads		system.ali
 Z system.tasking%s	s-taskin.adb		s-taskin.ali
 Z system.tasking.rendezvous%s  s-tasren.adb	s-tasren.ali
-W terrain%s		terrain.adb		terrain.ali
 
 D ada.ads		20190518041256 76789da1 ada%s
 D a-except.ads		20190518041256 291912d5 ada.exceptions%s
@@ -30,23 +24,10 @@ D a-stream.ads		20190518041256 119b8fb3 ada.streams%s
 D a-tags.ads		20190518041258 491b781d ada.tags%s
 D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
 D controller.ads	20200223175438 ff814c84 controller%s
-D display.ads		20200128155808 3a88167c display%s
-D display-basic.ads	20200223211124 66d43323 display.basic%s
 D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-c.ads		20190518041256 5421119b interfaces.c%s
-D i-cexten.ads		20190518041256 38d7e116 interfaces.c.extensions%s
 D i-cstrin.ads		20190518041256 341d0ddf interfaces.c.strings%s
-D main.adb		20200223183956 b469403e main%b
-D mars_lander.ads	20200225093108 a32da1f8 mars_lander%s
-D sdl_blendmode_h.ads	20200121120806 e308a3b6 sdl_blendmode_h%s
-D sdl_pixels_h.ads	20200121120806 89492fa8 sdl_pixels_h%s
-D sdl_rect_h.ads	20200121120806 5db03fa9 sdl_rect_h%s
-D sdl_rwops_h.ads	20200121120806 d60b2061 sdl_rwops_h%s
-D sdl_stdinc_h.ads	20200121120806 76b5d89f sdl_stdinc_h%s
-D sdl_surface_h.ads	20200121120806 da149c96 sdl_surface_h%s
-D stdarg_h.ads		20200121120806 db698406 stdarg_h%s
-D stddef_h.ads		20200121120806 f49cc756 stddef_h%s
-D stdint_h.ads		20200121120806 376ae00b stdint_h%s
+D main.adb		20200227150112 dee79d2b main%b
 D system.ads		20190518041258 32a08138 system%s
 D s-atacco.ads		20190518041258 4c36d12f system.address_to_access_conversions%s
 D s-exctab.ads		20190518041256 54135002 system.exception_table%s
@@ -71,29 +52,16 @@ D s-tassta.ads		20190518041258 cca55c94 system.tasking.stages%s
 D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
 D s-win32.ads		20190518041256 90ecf4e6 system.win32%s
-D terrain.ads		20200223100318 ddc24617 terrain%s
 G a e
-G c Z b b [main standard 10 11 none]
-G r r none [main standard 10 11 none] [start controller__ai_task 4 13 none]
-X 1 ada.ads
-16K9*Ada 20e8 15|1r6 1r25
-X 4 a-reatim.ads
-39K13*Real_Time 185e18 15|1w10 1r29
+G c Z b b [main standard 4 11 none]
+G r r none [main standard 4 11 none] [start controller__ai_task 4 13 none]
 X 8 controller.ads
-1K9*Controller 7e15 15|7w6 7r25 14r4
-3t9*AI_Task 15|14r15
-4Y13 Start 15|14s23
-X 9 display.ads
-23K9*Display 59e12 15|3w6 3r25 4r6 4r25
-X 10 display-basic.ads
-20K17*Basic 363e18 15|4w14 4r33
-X 15 main.adb
-10U11*Main 10b11 15l5 15t9
-X 16 mars_lander.ads
-4K9*Mars_Lander 15|5w6 5r25 16|42e16
-X 36 s-stausa.ads
+1K9*Controller 7e15 12|1w6 1r25 8r4
+3t9*AI_Task 12|8r15
+4Y13 Start 12|8s23
+X 12 main.adb
+4U11*Main 4b11 9l5 9t9
+X 23 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
-X 50 terrain.ads
-3K9*Terrain 15|6w6 6r25 50|21e12
 
