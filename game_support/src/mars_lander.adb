@@ -117,20 +117,8 @@ package body Mars_Lander is
             when SDLK_UP => 
                lander.Acceleration.X := - Sin(lander.Direction * 2.0 * Ada.Numerics.Pi / 180.0) * 6.5;
                lander.Acceleration.Y := Cos(lander.Direction * 2.0 * Ada.Numerics.Pi / 180.0) * 6.5;
-         
-            when SDLK_DOWN =>
-               if lander.Acceleration.Y > 0.0 then 
-                  lander.Acceleration.Y := lander.Acceleration.Y * 0.2;
-               else
-                  lander.Acceleration.Y := lander.Acceleration.Y - 0.2;
-               end if; 
-               if lander.Acceleration.X > 0.0 then 
-                  lander.Acceleration.X := lander.Acceleration.X * 0.2;
-               else
-                  lander.Acceleration.X := lander.Acceleration.X - 0.2;
-               end if;
             
-            when SDLK_UNKNOWN =>
+            when SDLK_UNKNOWN | SDLK_DOWN =>
                lander.Acceleration := (0.0, 0.0, 0.0);
             when others =>
                null;
