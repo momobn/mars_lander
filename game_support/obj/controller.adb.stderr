@@ -1,0 +1,2 @@
+controller.adb:52:07: warning: variable "middle_point" is assigned but never read
+controller.adb:53:07: warning: variable "lander_middle" is assigned but never read

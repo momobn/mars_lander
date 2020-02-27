@@ -29,7 +29,7 @@ D a-nuelfu.ads		20190518041256 03e83d1c ada.numerics.elementary_functions%s
 D a-ngelfu.ads		20190518041258 55716239 ada.numerics.generic_elementary_functions%s
 D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
 D display.ads		20200128155808 3a88167c display%s
-D display-basic.ads	20200121120804 66d43323 display.basic%s
+D display-basic.ads	20200223211124 66d43323 display.basic%s
 D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-c.ads		20190518041256 5421119b interfaces.c%s
 D i-cexten.ads		20190518041256 38d7e116 interfaces.c.extensions%s

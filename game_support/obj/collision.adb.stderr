@@ -1,0 +1,2 @@
+collision.adb:5:07: warning: "UA" is not modified, could be declared constant
+collision.adb:8:07: warning: "UB" is not modified, could be declared constant

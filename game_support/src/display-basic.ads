@@ -347,7 +347,7 @@ package Display.Basic is
    function To_Point3d (Canvas : Canvas_ID; P : Screen_Point) return Point_3d;
    function To_Screen_Point (Canvas : Canvas_ID;  P : Point_3d) return Screen_Point;
 
-  function Is_Killed return Boolean;
+   function Is_Killed return Boolean;
 
 
 private
